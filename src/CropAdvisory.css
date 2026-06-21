@@ -1,0 +1,51 @@
+.search-box {
+  width: 100%;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.crop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 20px;
+}
+
+.crop-card {
+  text-align: center;
+  background: #f7f7f7;
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.crop-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.crop-card p {
+  font-size: 14px;
+  font-weight: 500;
+}
+/* Remove default link styling from crop cards */
+.crop-card {
+  text-decoration: none;
+  color: black;
+  display: block;
+}
+
+.crop-card p {
+  margin-top: 10px;
+  font-weight: 500;
+  color: black;
+}
+
+/* Optional: hover effect like navbar */
+.crop-card:hover p {
+  color: #2e7d32; /* same green shade as navbar */
+}

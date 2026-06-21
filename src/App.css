@@ -1,0 +1,150 @@
+/* =========================
+   RESET
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =========================
+   GLOBAL
+========================= */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f6fff6;
+  color: #1f3d1f;
+  line-height: 1.6;
+}
+
+/* =========================
+   COMMON CONTAINER
+   (USED BY ALL PAGES EXCEPT HOME)
+========================= */
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Prevent container styles from affecting home page */
+.home-container .container {
+  max-width: unset;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================
+   HOME PAGE
+========================= */
+.home-container {
+  padding: 50px 20px;
+  min-height: 100vh;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero-section {
+  background: linear-gradient(135deg, #b7e4c7, #74c69d);
+  padding: 70px 40px;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.hero-section h1 {
+  font-size: 42px;
+  color: #1b4332;
+  margin-bottom: 18px;
+}
+
+.hero-text {
+  font-size: 18px;
+  max-width: 750px;
+  margin: 0 auto 35px;
+  color: #2d6a4f;
+  line-height: 1.8;
+}
+
+/* =========================
+   HERO BUTTON
+========================= */
+.hero-btn {
+  background-color: #2d6a4f;
+  color: white;
+  border: none;
+  padding: 14px 34px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #1b4332;
+  transform: scale(1.06);
+}
+
+/* =========================
+   INTRO SECTION
+========================= */
+.intro-section {
+  margin-top: 55px;
+  background-color: #e9f5ec;
+  padding: 35px;
+  border-radius: 14px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.intro-section h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  color: #1b4332;
+}
+
+.intro-section p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 12px;
+  color: #2d6a4f;
+}
+
+/* =========================
+   DEVELOPMENT NOTE
+========================= */
+.note {
+  background-color: #fff3cd;
+  border-left: 6px solid #ffca2c;
+  padding: 14px;
+  font-size: 15px;
+  border-radius: 6px;
+  margin-top: 18px;
+  color: #664d03;
+}
+
+/* =========================
+   HEADINGS
+========================= */
+h1,
+h2,
+h3 {
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 32px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .hero-section {
+    padding: 55px 25px;
+  }
+}

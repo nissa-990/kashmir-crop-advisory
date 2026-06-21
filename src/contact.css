@@ -1,0 +1,18 @@
+.contact-container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.contact-icon {
+  font-size: 22px;
+  color: green;
+}
