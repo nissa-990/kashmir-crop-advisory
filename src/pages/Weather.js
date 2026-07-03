@@ -130,7 +130,7 @@ function Weather() {
   }, [district]);
     if (error) {
     return (
-      <div className="container">
+      <div className="weather-container">
         <div className="weather-card">
           <h2>Weather Updates</h2>
           <p style={{ color: "red" }}>{error}</p>
@@ -141,7 +141,7 @@ function Weather() {
 
   if (!weather) {
     return (
-      <div className="container">
+      <div className="weather-container">
         <div className="weather-card">
           <h2>Weather Updates</h2>
           <p>Loading...</p>
@@ -150,22 +150,9 @@ function Weather() {
     );
   }
 
-  const today = new Date();
-
-  const date = today.toLocaleDateString("en-IN", {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-
-  const time = today.toLocaleTimeString("en-IN", {
-    hour: "2-digit",
-    minute: "2-digit",
-  });
 
   return (
-    <div className="container">
+    <div className="weather-container">
 
     <h1 className="page-title">
       🌤 Weather Updates
@@ -221,7 +208,7 @@ function Weather() {
 
           </div>
 
-          <h3>
+          <h3 className="weather-description">
             {weatherDescriptions[weather.current.weather_code]}
           </h3>
 
