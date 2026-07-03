@@ -7,6 +7,7 @@ import CropPage from "./pages/CropPage";
 import CropCalendar from "./pages/CropCalendar";
 import CropCalendarMonth from "./pages/CropCalendarMonth";
 import DiseaseManagement from "./pages/DiseaseManagement";
+import Weather from "./pages/Weather";
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 
@@ -71,6 +72,9 @@ function App() {
 
         {/* 🦠 DISEASE MANAGEMENT */}
         <Route path="/disease-management" element={<DiseaseManagement />} />
+
+        {/* 🌦 WEATHER */}
+        <Route path="/weather" element={<Weather />} />
 
         {/* ℹ️ OTHER PAGES */}
         <Route path="/about" element={<About />} />

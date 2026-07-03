@@ -27,7 +27,7 @@ function Dashboard() {
 
         <div
           className="card"
-          onClick={() => navigate("/weather-updates")}
+          onClick={() => navigate("/weather")}
           style={{ cursor: "pointer" }}
         >
           Weather Updates
