@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { supabase } from "../supabase/supabaseClient";
+import "./CropCalendar.css";
 
 function CropCalendarMonth() {
   const { month } = useParams();
@@ -8,10 +9,16 @@ function CropCalendarMonth() {
 
   useEffect(() => {
     const fetchMonthData = async () => {
+      console.log("Selected month:", month);
+
       const { data, error } = await supabase
-        .from("crops")           // table name
+        .from("crops")
         .select("*")
-        .eq("month", month);     // filter by month
+        .eq("month", month);
+
+      console.log("Returned data:", data);
+      console.table(data);
+      console.log("Returned error:", error);
 
       if (error) {
         console.error("Error fetching data:", error);
@@ -26,7 +33,7 @@ function CropCalendarMonth() {
   if (data.length === 0) {
     return (
       <div className="container">
-        <h2>Crop Calendar – {month}</h2>
+        <h2>Crop Calendar - {month}</h2>
         <p>No crop calendar data found.</p>
       </div>
     );
@@ -34,31 +41,33 @@ function CropCalendarMonth() {
 
   return (
     <div className="container">
-      <h2>Crop Calendar – {month}</h2>
+      <h2>Crop Calendar - {month}</h2>
 
-      <table border="1" cellPadding="8" cellSpacing="0">
-        <thead>
-          <tr>
-            {Object.keys(data[0])
-              .filter((col) => col !== "id")   // ✅ hide id column
-              .map((col) => (
-                <th key={col}>{col.replaceAll("_", " ")}</th>
-              ))}
-          </tr>
-        </thead>
-
-        <tbody>
-          {data.map((row, index) => (
-            <tr key={index}>
-              {Object.keys(row)
-                .filter((col) => col !== "id") // ✅ hide id column
+      <div className="table-container">
+        <table className="crop-table">
+          <thead>
+            <tr>
+              {Object.keys(data[0])
+                .filter((col) => col !== "id" && col !== "created_at")
                 .map((col) => (
-                  <td key={col}>{row[col]}</td>
+                  <th key={col}>{col.replaceAll("_", " ")}</th>
                 ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+
+          <tbody>
+            {data.map((row, index) => (
+              <tr key={index}>
+                {Object.keys(row)
+                  .filter((col) => col !== "id" && col !== "created_at")
+                  .map((col) => (
+                    <td key={col}>{row[col]}</td>
+                  ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
