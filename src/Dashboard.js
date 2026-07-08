@@ -56,6 +56,13 @@ function Dashboard() {
         >
           Disease Management
         </div>
+            <div
+      className="card"
+      onClick={() => navigate("/disease-detection")}
+      style={{ cursor: "pointer" }}
+    >
+      Disease Detection
+    </div>
       </div>
     </div>
   );
