@@ -82,11 +82,11 @@
     font-size:60px;
     margin:0;
     line-height:1;
-    transform: translateX(140px);
+    transform: translateX(1px);
 }
 
 .big-icon {
-    margin-left: 100px;
+    margin-left: 90px;
 }
 
 .big-icon svg {
