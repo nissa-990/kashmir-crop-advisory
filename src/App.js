@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import DiseaseDetection from "./pages/DiseaseDetection";
 import Dashboard from "./Dashboard";
 import About from "./About";
 import Contact from "./Contact";
@@ -75,6 +76,8 @@ function App() {
 
         {/* 🌦 WEATHER */}
         <Route path="/weather" element={<Weather />} />
+
+        <Route path="/disease-detection" element={<DiseaseDetection />} />
 
         {/* ℹ️ OTHER PAGES */}
         <Route path="/about" element={<About />} />
