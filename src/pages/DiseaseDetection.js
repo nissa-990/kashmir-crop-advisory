@@ -92,7 +92,7 @@ function DiseaseDetection() {
 
         <div className="upload-box">
           <label className="camera-btn">
-             📷 Open Camera / Upload Image
+             📷 Take Photo
              <input
             type="file"
             accept="image/*"
@@ -100,6 +100,17 @@ function DiseaseDetection() {
             onChange={handleImageChange}
             hidden
           />
+        </label>
+
+        <label className="camera-btn upload-btn">
+               🖼️ Upload from Gallery
+               <input
+              type="file"
+              accept="image/*"
+              onChange={handleImageChange}
+              hidden
+            />
+
         </label>
 
           {preview && (
