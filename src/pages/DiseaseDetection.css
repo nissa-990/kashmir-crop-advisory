@@ -38,6 +38,21 @@
   margin-bottom: 15px;
 }
 
+.camera-btn {
+  display: inline-block;
+  background: #2e7d32;
+  color: white;
+  padding: 12px 22px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.camera-btn:hover {
+  background: #1b5e20;
+}
+
 .preview-img {
   width: 100%;
   max-height: 300px;

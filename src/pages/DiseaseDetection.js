@@ -91,12 +91,16 @@ function DiseaseDetection() {
         </p>
 
         <div className="upload-box">
-          <input
+          <label className="camera-btn">
+             📷 Open Camera / Upload Image
+             <input
             type="file"
             accept="image/*"
             capture="environment"
             onChange={handleImageChange}
+            hidden
           />
+        </label>
 
           {preview && (
             <img src={preview} alt="Uploaded leaf" className="preview-img" />
