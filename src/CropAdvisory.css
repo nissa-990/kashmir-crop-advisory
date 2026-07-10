@@ -38,6 +38,49 @@
   color: black;
   display: block;
 }
+.search-area{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.voice-btn{
+    width:55px;
+    height:55px;
+    border:none;
+    border-radius:50%;
+    background:#2e7d32;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+}
+
+.voice-btn:hover{
+    background:#1b5e20;
+}
+
+.voice-message{
+    text-align:center;
+    color:#2e7d32;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.crop-name{
+    text-align:center;
+}
+
+.english-name{
+    font-weight:bold;
+    margin-bottom:4px;
+}
+
+.kashmiri-name{
+    color:#2e7d32;
+    font-size:18px;
+}
 
 .crop-card p {
   margin-top: 10px;
@@ -48,4 +91,92 @@
 /* Optional: hover effect like navbar */
 .crop-card:hover p {
   color: #2e7d32; /* same green shade as navbar */
+}
+.search-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  max-width: 760px;
+  margin: 0 auto 12px;
+}
+
+.search-area .search-box {
+  flex: 1;
+  margin: 0;
+}
+
+.voice-btn {
+  min-width: 110px;
+  min-height: 48px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 10px;
+  background: #2e7d32;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.voice-btn:hover {
+  background: #1b5e20;
+}
+
+.voice-btn.listening {
+  background: #c62828;
+}
+
+.voice-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.85;
+}
+
+.voice-message {
+  margin: 8px 0 22px;
+  text-align: center;
+  color: #2e7d32;
+  font-weight: 600;
+}
+
+.crop-name {
+  text-align: center;
+}
+
+.english-name {
+  margin: 8px 0 3px;
+  font-weight: 700;
+}
+
+.kashmiri-name {
+  margin: 0;
+  color: #2e7d32;
+  font-size: 18px;
+  line-height: 1.8;
+  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif;
+}
+
+.no-crops-found {
+  margin: 40px auto;
+  text-align: center;
+}
+
+.no-crops-found button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .search-area {
+    flex-direction: column;
+  }
+
+  .search-area .search-box,
+  .voice-btn {
+    width: 100%;
+  }
 }
