@@ -1,4 +1,5 @@
 import Navbar from "./Navbar";
+import GovernmentSchemes from "./pages/GovernmentSchemes";
 import DiseaseDetection from "./pages/DiseaseDetection";
 import Dashboard from "./Dashboard";
 import About from "./About";
@@ -78,6 +79,8 @@ function App() {
         <Route path="/weather" element={<Weather />} />
 
         <Route path="/disease-detection" element={<DiseaseDetection />} />
+        <Route path="/government-schemes" element={<GovernmentSchemes />} />
+      
 
         {/* ℹ️ OTHER PAGES */}
         <Route path="/about" element={<About />} />

@@ -1,0 +1,279 @@
+.scheme-page {
+  min-height: 100vh;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 42px 22px 60px;
+}
+
+.scheme-heading {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.scheme-heading h1 {
+  margin: 0 0 10px;
+  color: #1b5e20;
+  font-size: 38px;
+}
+
+.scheme-heading p {
+  max-width: 760px;
+  margin: 0 auto;
+  color: #5f665f;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.scheme-search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 10px 14px;
+  background: #ffffff;
+  border: 1px solid #c8e6c9;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.07);
+}
+
+.scheme-search-icon {
+  font-size: 20px;
+}
+
+.scheme-search-box input {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 4px;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 16px;
+}
+
+.clear-search-btn {
+  padding: 8px 13px;
+  border: none;
+  border-radius: 8px;
+  background: #e8f5e9;
+  color: #1b5e20;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.clear-search-btn:hover {
+  background: #c8e6c9;
+}
+
+.scheme-count {
+  margin: 15px 0 30px;
+  text-align: center;
+  color: #676767;
+}
+
+.scheme-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  gap: 27px;
+}
+
+.scheme-card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #ffffff;
+  border-top: 6px solid #2e7d32;
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.09);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.scheme-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.14);
+}
+
+.scheme-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 13px;
+}
+
+.scheme-icon {
+  font-size: 42px;
+}
+
+.scheme-category {
+  padding: 7px 10px;
+  background: #e8f5e9;
+  color: #1b5e20;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.scheme-card h2 {
+  margin: 0 0 20px;
+  color: #246b2c;
+  font-size: 22px;
+  line-height: 1.35;
+}
+
+.scheme-detail {
+  margin-bottom: 15px;
+}
+
+.scheme-detail h3 {
+  margin: 0 0 5px;
+  color: #303730;
+  font-size: 15px;
+}
+
+.scheme-detail p {
+  margin: 0;
+  color: #606660;
+  line-height: 1.6;
+}
+
+.scheme-link-btn {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 19px;
+  border-radius: 9px;
+  background: #2e7d32;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.scheme-link-btn:hover {
+  background: #1b5e20;
+}
+
+.no-schemes {
+  max-width: 620px;
+  margin: 45px auto;
+  padding: 35px 25px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 7px 22px rgba(0, 0, 0, 0.08);
+}
+
+.no-schemes h2 {
+  color: #2e7d32;
+}
+
+.no-schemes button {
+  margin-top: 10px;
+  padding: 10px 17px;
+  border: none;
+  border-radius: 8px;
+  background: #2e7d32;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.scheme-notice {
+  margin-top: 35px;
+  padding: 17px 20px;
+  border-left: 5px solid #f2a900;
+  border-radius: 10px;
+  background: #fff8df;
+  color: #665719;
+  line-height: 1.6;
+}
+.scheme-updated {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  margin-top: -22px;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .scheme-page {
+    padding: 28px 15px 45px;
+  }
+
+  .scheme-heading h1 {
+    font-size: 29px;
+  }
+
+  .scheme-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .scheme-card {
+    padding: 21px;
+  }
+
+  .scheme-search-box {
+    padding: 8px 10px;
+  }
+  .scheme-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.scheme-actions .scheme-link-btn {
+  margin-top: 0;
+}
+
+.learn-btn {
+  background: #2e7d32;
+}
+
+.apply-now-btn {
+  background: #1565c0;
+}
+
+.learn-btn:hover {
+  background: #1b5e20;
+}
+
+.apply-now-btn:hover {
+  background: #0d47a1;
+}
+.scheme-updated {
+  text-align: center;
+  color: #777;
+  font-size: 13px;
+  margin-top: -22px;
+  margin-bottom: 30px;
+}
+
+.scheme-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.scheme-actions .scheme-link-btn {
+  margin-top: 0;
+}
+
+.learn-btn {
+  background: #2e7d32;
+}
+
+.apply-now-btn {
+  background: #1565c0;
+}
+
+.learn-btn:hover {
+  background: #1b5e20;
+}
+
+.apply-now-btn:hover {
+  background: #0d47a1;
+}
+}
