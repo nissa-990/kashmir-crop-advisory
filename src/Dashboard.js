@@ -17,13 +17,6 @@ function Dashboard() {
           Select Crop
         </div>
 
-        <div
-          className="card"
-          onClick={() => navigate("/market-prices")}
-          style={{ cursor: "pointer" }}
-        >
-          Market Prices
-        </div>
 
         <div
           className="card"
@@ -47,6 +40,14 @@ function Dashboard() {
           style={{ cursor: "pointer" }}
         >
           Crop Calendar
+        </div>
+
+          <div
+         className="card"
+         onClick={() => navigate("/market-prices")}
+         style={{ cursor: "pointer" }}
+        >
+          Market Prices
         </div>
 
         <div

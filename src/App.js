@@ -1,6 +1,7 @@
 import Navbar from "./Navbar";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
 import DiseaseDetection from "./pages/DiseaseDetection";
+import MarketPrices from "./pages/MarketPrices";
 import Dashboard from "./Dashboard";
 import About from "./About";
 import Contact from "./Contact";
@@ -80,7 +81,7 @@ function App() {
 
         <Route path="/disease-detection" element={<DiseaseDetection />} />
         <Route path="/government-schemes" element={<GovernmentSchemes />} />
-      
+        <Route path="/market-prices" element={<MarketPrices />} />
 
         {/* ℹ️ OTHER PAGES */}
         <Route path="/about" element={<About />} />
