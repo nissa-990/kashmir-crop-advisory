@@ -10,14 +10,11 @@ import {
   FaBug,
 } from "react-icons/fa";
 
-
 function Dashboard() {
   const navigate = useNavigate();
 
   return (
     <div className="dashboard-page">
-
-      
 
       <div className="container">
 
@@ -32,43 +29,71 @@ function Dashboard() {
 
         <div className="dashboard">
 
-          <div className="card" onClick={() => navigate("/crop-advisory")}>
+          {/* Crop Advisory */}
+          <div
+            className="card"
+            onClick={() => navigate("/crop-advisory")}
+          >
             <FaSeedling className="card-icon" />
             <h3>Crop Advisory</h3>
             <p>View crop recommendations for vegetable cultivation.</p>
           </div>
 
-          <div className="card" onClick={() => navigate("/market-prices")}>
+          {/* Market Prices */}
+          <div
+            className="card"
+            onClick={() => navigate("/market-prices")}
+          >
             <FaRupeeSign className="card-icon" />
             <h3>Market Prices</h3>
             <p>View the latest vegetable market prices.</p>
           </div>
 
-          <div className="card" onClick={() => navigate("/weather")}>
+          {/* Weather */}
+          <div
+            className="card"
+            onClick={() => navigate("/weather")}
+          >
             <FaCloudSun className="card-icon" />
             <h3>Weather Updates</h3>
             <p>Check live weather forecasts for Kashmir.</p>
           </div>
 
-          <div className="card" onClick={() => navigate("/government-schemes")}>
+          {/* Government Schemes */}
+          <div
+            className="card"
+            onClick={() => navigate("/government-schemes")}
+          >
             <FaLandmark className="card-icon" />
             <h3>Government Schemes</h3>
             <p>Explore subsidies and government support schemes.</p>
           </div>
 
-          <div className="card" onClick={() => navigate("/crop-calendar")}>
+          {/* Crop Calendar */}
+          <div
+            className="card"
+            onClick={() => navigate("/crop-calendar")}
+          >
             <FaCalendarAlt className="card-icon" />
             <h3>Crop Calendar</h3>
             <p>View the month-wise sowing and harvesting schedule.</p>
           </div>
 
-          <div className="card" onClick={() => navigate("/disease-management")}>
+          {/* Disease Management */}
+          <div
+            className="card"
+            onClick={() => navigate("/disease-management")}
+          >
             <FaNotesMedical className="card-icon" />
             <h3>Disease Management</h3>
             <p>Learn disease prevention and treatment methods.</p>
           </div>
 
-          <div className="card" onClick={() => navigate("/disease-detection")}>
+          {/* Disease Detection */}
+          <div
+            className="card"
+            onClick={() => navigate("/disease-detection")}
+          >
             <FaBug className="card-icon" />
             <h3>Disease Detection</h3>
             <p>Upload crop images for AI-based disease detection.</p>

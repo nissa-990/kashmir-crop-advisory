@@ -5,6 +5,7 @@ import Contact from "./Contact";
 import CropAdvisory from "./CropAdvisory";
 import GovernmentSchemes from "./pages/GovernmentSchemes";
 import DiseaseDetection from "./pages/DiseaseDetection";
+import MarketPrices from "./pages/MarketPrices";
 import CropPage from "./pages/CropPage";
 import CropCalendar from "./pages/CropCalendar";
 import CropCalendarMonth from "./pages/CropCalendarMonth";
@@ -20,7 +21,7 @@ function App() {
   return (
     <div>
       <Navbar />
-        <BackgroundLeaves />
+      <BackgroundLeaves />
 
       <Routes>
 
@@ -33,6 +34,9 @@ function App() {
         {/* CROP ADVISORY */}
         <Route path="/crop-advisory" element={<CropAdvisory />} />
         <Route path="/crop-advisory/:slug" element={<CropPage />} />
+
+        {/* MARKET PRICES */}
+        <Route path="/market-prices" element={<MarketPrices />} />
 
         {/* CROP CALENDAR */}
         <Route path="/crop-calendar" element={<CropCalendar />} />
