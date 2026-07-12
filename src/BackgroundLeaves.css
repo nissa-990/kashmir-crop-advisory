@@ -1,0 +1,53 @@
+.global-leaf{
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.15;
+    filter: drop-shadow(0 6px 12px rgba(76,175,80,.15));
+}
+
+/* LEFT */
+
+.leaf1{
+    width: 90px;
+    top: 70px;
+    left: 20px;
+    transform: rotate(-25deg);
+}
+
+.leaf2{
+    width: 70px;
+    top: 340px;
+    left: 40px;
+    transform: rotate(25deg);
+}
+
+.leaf3{
+    width: 85px;
+    bottom: 50px;
+    left: 20px;
+    transform: rotate(-90deg);
+}
+
+/* RIGHT */
+
+.leaf4{
+    width: 90px;
+    top: 70px;
+    right: 20px;
+    transform: rotate(25deg);
+}
+
+.leaf5{
+    width: 70px;
+    top: 340px;
+    right: 40px;
+    transform: rotate(-25deg);
+}
+
+.leaf6{
+    width: 85px;
+    bottom: 50px;
+    right: 20px;
+    transform: rotate(120deg);
+}

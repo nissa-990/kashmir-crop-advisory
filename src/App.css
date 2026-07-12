@@ -10,141 +10,310 @@
 /* =========================
    GLOBAL
 ========================= */
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f6fff6;
-  color: #1f3d1f;
-  line-height: 1.6;
-}
+body{
+    font-family:"Segoe UI",Arial,sans-serif;
+    color:#23432c;
+    line-height:1.6;
 
+    background:
+    linear-gradient(
+        135deg,
+        #f6fcf7,
+        #edf8ef,
+        #f8fcf8
+    );
+}
 /* =========================
    COMMON CONTAINER
-   (USED BY ALL PAGES EXCEPT HOME)
 ========================= */
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 40px auto;
   padding: 20px;
-}
-
-/* Prevent container styles from affecting home page */
-.home-container .container {
-  max-width: unset;
-  margin: 0;
-  padding: 0;
 }
 
 /* =========================
    HOME PAGE
 ========================= */
-.home-container {
-  padding: 50px 20px;
-  min-height: 100vh;
+
+.home-container{
+    width:100%;
 }
 
 /* =========================
    HERO SECTION
 ========================= */
-.hero-section {
-  background: linear-gradient(135deg, #b7e4c7, #74c69d);
-  padding: 70px 40px;
-  border-radius: 18px;
-  text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+
+.hero-section{
+
+    height:85vh;
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    position:relative;
+
 }
 
-.hero-section h1 {
-  font-size: 42px;
-  color: #1b4332;
-  margin-bottom: 18px;
+.hero-content{
+
+    background:rgba(0,0,0,.45);
+
+    padding:50px;
+
+    border-radius:18px;
+
+    width:90%;
+    max-width:850px;
+
+    backdrop-filter:blur(5px);
+
 }
 
-.hero-text {
-  font-size: 18px;
-  max-width: 750px;
-  margin: 0 auto 35px;
-  color: #2d6a4f;
-  line-height: 1.8;
+.hero-text{
+
+    color:white;
+
+    font-size:20px;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+
 }
 
-/* =========================
-   HERO BUTTON
-========================= */
-.hero-btn {
-  background-color: #2d6a4f;
-  color: white;
-  border: none;
-  padding: 14px 34px;
-  font-size: 16px;
-  border-radius: 30px;
-  cursor: pointer;
-  transition: all 0.3s ease;
+.hero-btn{
+
+    background:#2d6a4f;
+
+    color:white;
+
+    border:none;
+
+    padding:15px 40px;
+
+    font-size:17px;
+
+    border-radius:40px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
 }
 
-.hero-btn:hover {
-  background-color: #1b4332;
-  transform: scale(1.06);
-}
+.hero-btn:hover{
 
-/* =========================
-   INTRO SECTION
-========================= */
-.intro-section {
-  margin-top: 55px;
-  background-color: #e9f5ec;
-  padding: 35px;
-  border-radius: 14px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-}
+    background:#1b4332;
 
-.intro-section h2 {
-  font-size: 26px;
-  margin-bottom: 15px;
-  color: #1b4332;
-}
+    transform:translateY(-3px);
 
-.intro-section p {
-  font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 12px;
-  color: #2d6a4f;
-}
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
 
-/* =========================
-   DEVELOPMENT NOTE
-========================= */
-.note {
-  background-color: #fff3cd;
-  border-left: 6px solid #ffca2c;
-  padding: 14px;
-  font-size: 15px;
-  border-radius: 6px;
-  margin-top: 18px;
-  color: #664d03;
-}
-
-/* =========================
-   HEADINGS
-========================= */
-h1,
-h2,
-h3 {
-  font-weight: 600;
 }
 
 /* =========================
-   RESPONSIVE DESIGN
+   ABOUT SECTION
 ========================= */
-@media (max-width: 768px) {
-  .hero-section h1 {
-    font-size: 32px;
-  }
 
-  .hero-text {
-    font-size: 16px;
-  }
+.intro-section{
 
-  .hero-section {
-    padding: 55px 25px;
-  }
+    max-width:1100px;
+
+    margin:60px auto;
+
+    padding:45px;
+
+    background:white;
+
+    border-radius:18px;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+}
+
+.intro-section h2{
+
+    text-align:center;
+
+    font-size:36px;
+
+    color:#1b4332;
+
+    margin-bottom:25px;
+
+}
+
+.intro-section p{
+
+    font-size:18px;
+
+    color:#355e3b;
+
+    line-height:1.9;
+
+    margin-bottom:18px;
+
+    text-align:justify;
+
+}
+
+.note{
+
+    margin-top:30px;
+
+    background:#fff8d6;
+
+    border-left:6px solid #f4b400;
+
+    padding:18px;
+
+    border-radius:8px;
+
+    color:#6b5800;
+
+    font-size:16px;
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:900px){
+
+.hero-section{
+
+height:70vh;
+
+}
+
+.hero-content{
+
+padding:35px;
+
+}
+
+.hero-section h1{
+
+font-size:42px;
+
+}
+
+.hero-text{
+
+font-size:18px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero-section{
+
+height:65vh;
+
+}
+
+.hero-content{
+
+padding:25px;
+
+}
+
+.hero-section h1{
+
+font-size:32px;
+
+}
+
+.hero-text{
+
+font-size:16px;
+
+}
+
+.hero-btn{
+
+padding:13px 28px;
+
+font-size:15px;
+
+}
+
+.intro-section{
+
+padding:25px;
+
+margin:30px 15px;
+
+}
+
+.intro-section h2{
+
+font-size:28px;
+
+}
+
+.intro-section p{
+
+font-size:16px;
+
+text-align:left;
+
+}
+
+}
+/* ==========================================
+   GLOBAL LEAF BACKGROUND
+========================================== */
+
+body::before,
+body::after{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    z-index:-1;
+}
+
+body::before{
+
+    background:
+    url("./assets/leaf.jpg") no-repeat left 30px top 80px,
+    url("./assets/leaf.jpg") no-repeat left 50px center,
+    url("./assets/leaf.jpg") no-repeat left 25px bottom 50px;
+
+    background-size:
+    85px,
+    65px,
+    95px;
+
+    opacity:.18;
+}
+
+body::after{
+
+    background:
+    url("./assets/leaf.jpg") no-repeat right 30px top 90px,
+    url("./assets/leaf.jpg") no-repeat right 50px center,
+    url("./assets/leaf.jpg") no-repeat right 25px bottom 40px;
+
+    background-size:
+    85px,
+    65px,
+    95px;
+
+    opacity:.18;
 }

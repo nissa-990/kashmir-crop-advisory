@@ -1,68 +1,80 @@
 import "./Dashboard.css";
 import { useNavigate } from "react-router-dom";
+import {
+  FaSeedling,
+  FaCloudSun,
+  FaCalendarAlt,
+  FaRupeeSign,
+  FaLandmark,
+  FaNotesMedical,
+  FaBug,
+} from "react-icons/fa";
+
 
 function Dashboard() {
   const navigate = useNavigate();
 
   return (
-    <div className="container">
-      <h2>Select Category</h2>
+    <div className="dashboard-page">
 
-      <div className="dashboard">
-        <div
-          className="card"
-          onClick={() => navigate("/crop-advisory")}
-          style={{ cursor: "pointer" }}
-        >
-          Select Crop
+      
+
+      <div className="container">
+
+        <div className="dashboard-header">
+          <h2>🌿 Explore Agricultural Services</h2>
+
+          <p>
+            Choose a service to access crop advisory, weather updates,
+            market prices, disease management and government schemes.
+          </p>
         </div>
 
-        <div
-          className="card"
-          onClick={() => navigate("/market-prices")}
-          style={{ cursor: "pointer" }}
-        >
-          Market Prices
-        </div>
+        <div className="dashboard">
 
-        <div
-          className="card"
-          onClick={() => navigate("/weather")}
-          style={{ cursor: "pointer" }}
-        >
-          Weather Updates
-        </div>
+          <div className="card" onClick={() => navigate("/crop-advisory")}>
+            <FaSeedling className="card-icon" />
+            <h3>Crop Advisory</h3>
+            <p>View crop recommendations for vegetable cultivation.</p>
+          </div>
 
-        <div
-          className="card"
-          onClick={() => navigate("/government-schemes")}
-          style={{ cursor: "pointer" }}
-        >
-          Government Schemes
-        </div>
+          <div className="card" onClick={() => navigate("/market-prices")}>
+            <FaRupeeSign className="card-icon" />
+            <h3>Market Prices</h3>
+            <p>View the latest vegetable market prices.</p>
+          </div>
 
-        <div
-          className="card"
-          onClick={() => navigate("/crop-calendar")}
-          style={{ cursor: "pointer" }}
-        >
-          Crop Calendar
-        </div>
+          <div className="card" onClick={() => navigate("/weather")}>
+            <FaCloudSun className="card-icon" />
+            <h3>Weather Updates</h3>
+            <p>Check live weather forecasts for Kashmir.</p>
+          </div>
 
-        <div
-          className="card"
-          onClick={() => navigate("/disease-management")}
-          style={{ cursor: "pointer" }}
-        >
-          Disease Management
+          <div className="card" onClick={() => navigate("/government-schemes")}>
+            <FaLandmark className="card-icon" />
+            <h3>Government Schemes</h3>
+            <p>Explore subsidies and government support schemes.</p>
+          </div>
+
+          <div className="card" onClick={() => navigate("/crop-calendar")}>
+            <FaCalendarAlt className="card-icon" />
+            <h3>Crop Calendar</h3>
+            <p>View the month-wise sowing and harvesting schedule.</p>
+          </div>
+
+          <div className="card" onClick={() => navigate("/disease-management")}>
+            <FaNotesMedical className="card-icon" />
+            <h3>Disease Management</h3>
+            <p>Learn disease prevention and treatment methods.</p>
+          </div>
+
+          <div className="card" onClick={() => navigate("/disease-detection")}>
+            <FaBug className="card-icon" />
+            <h3>Disease Detection</h3>
+            <p>Upload crop images for AI-based disease detection.</p>
+          </div>
+
         </div>
-            <div
-      className="card"
-      onClick={() => navigate("/disease-detection")}
-      style={{ cursor: "pointer" }}
-    >
-      Disease Detection
-    </div>
       </div>
     </div>
   );
