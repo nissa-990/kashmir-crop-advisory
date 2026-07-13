@@ -257,3 +257,366 @@
     font-size: 22px;
     font-weight: 600;
 }
+/* ---------- AI Advisory Notification ---------- */
+
+.top-section{
+    position:relative;
+}
+
+.advisory-notification{
+
+    width:520px;
+
+    height:85px;
+
+    background:#4a90e2;
+
+    border-radius:18px;
+
+    margin:25px 0;
+
+    display:flex;
+
+    align-items:center;
+
+    overflow:hidden;
+
+    cursor:pointer;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    transition:.3s;
+
+}
+.advisory-notification:hover{
+
+    transform:translateY(-2px);
+
+}
+.notification-icon{
+
+    width:90px;
+
+    height:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    background:#ffffff;
+
+}
+.notification-icon{
+
+    position:relative;
+
+}
+.notification-badge{
+
+    position:absolute;
+
+    top:8px;
+
+    right:12px;
+
+    width:22px;
+
+    height:22px;
+
+    border-radius:50%;
+
+    background:#ff3b30;
+
+    color:white;
+
+    font-size:12px;
+
+    font-weight:bold;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:2px solid white;
+
+    animation: badgePop 1.8s infinite;
+
+}
+
+.notification-icon svg{
+
+    font-size:40px;
+
+    color:#FFC107;
+
+    animation: bellShake 2s infinite, bellGlow 2s infinite;
+
+    transform-origin: top center;
+
+}
+.notification-text{
+
+    flex:1;
+
+    padding:0 25px;
+
+    color:white;
+
+}
+.notification-text h3{
+
+    margin:0;
+
+    font-size:24px;
+
+    font-weight:700;
+
+}
+.notification-text p{
+
+    margin-top:6px;
+
+    font-size:15px;
+
+    opacity:.95;
+
+}
+.notification-arrow{
+
+    width:80px;
+
+    font-size:36px;
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+@keyframes bellShake {
+
+    0%{
+        transform: rotate(0deg);
+    }
+
+    5%{
+        transform: rotate(18deg);
+    }
+
+    10%{
+        transform: rotate(-18deg);
+    }
+
+    15%{
+        transform: rotate(12deg);
+    }
+
+    20%{
+        transform: rotate(-12deg);
+    }
+
+    25%{
+        transform: rotate(0deg);
+    }
+
+    100%{
+        transform: rotate(0deg);
+    }
+
+}
+@keyframes bellGlow {
+
+    0%,100%{
+        filter: drop-shadow(0 0 5px #FFD54F);
+    }
+
+    10%{
+        filter: drop-shadow(0 0 18px #FFD54F);
+    }
+
+    20%{
+        filter: drop-shadow(0 0 12px #FFD54F);
+    }
+
+}
+@keyframes badgePop{
+
+    0%,100%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.2);
+
+    }
+
+}
+/* ================= AI Advisory Popup ================= */
+
+.advisory-overlay{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.45);
+
+    display:flex;
+
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+
+    animation:fadeIn .3s ease;
+}
+
+.advisory-popup{
+
+    width:700px;
+
+    max-width:90%;
+
+    max-height:80vh;
+
+    overflow-y:auto;
+
+    background:rgba(255,255,255,0.95);
+
+    border-radius:22px;
+
+    box-shadow:0 20px 60px rgba(0,0,0,.25);
+
+    animation:popup .35s ease;
+
+}
+
+.popup-header{
+
+    background:linear-gradient(135deg,#4CAF50,#2E7D32);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:18px 25px;
+
+    border-radius:22px 22px 0 0;
+
+}
+
+.popup-header h2{
+
+    margin:0;
+
+    font-size:26px;
+
+}
+
+.close-popup{
+
+    background:white;
+
+    color:#2E7D32;
+
+    border:none;
+
+    width:40px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.close-popup:hover{
+
+    background:#f2f2f2;
+
+    transform:rotate(90deg);
+
+}
+
+.popup-content{
+
+    padding:30px;
+
+    font-size:16px;
+
+    line-height:1.8;
+
+    color:#333;
+
+}
+
+.popup-content pre{
+
+    white-space:pre-wrap;
+
+    font-family:inherit;
+
+    margin:0;
+
+}
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes popup{
+
+    from{
+
+        transform:scale(.85);
+
+        opacity:0;
+
+    }
+
+    to{
+
+        transform:scale(1);
+
+        opacity:1;
+
+    }
+
+}
+
+

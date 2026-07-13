@@ -10,6 +10,7 @@ import {
   WiSnow,
   WiFog,
 } from "react-icons/wi";
+import { FaBell } from "react-icons/fa";
 
 import "./Weather.css";
 
@@ -97,6 +98,8 @@ const getDayName = (dateString) => {
 function Weather() {
   const [district, setDistrict] = useState("Srinagar");
   const [weather, setWeather] = useState(null);
+  const [advisory, setAdvisory] = useState(null);
+  const [showAdvisory, setShowAdvisory] = useState(false);
   const [error, setError] = useState("");
 
   useEffect(() => {
@@ -117,6 +120,24 @@ function Weather() {
         const data = await response.json();
 
         setWeather(data);
+        // Send weather data to Flask
+const advisoryResponse = await fetch("http://localhost:5000/weather-advisory", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    district,
+    current: data.current,
+    daily: data.daily,
+  }),
+});
+
+const advisoryData = await advisoryResponse.json();
+
+console.log("AI Response:", advisoryData);
+
+setAdvisory(advisoryData);
 
         setError("");
       } catch (err) {
@@ -154,6 +175,48 @@ function Weather() {
   return (
     <div className="weather-container">
 
+{showAdvisory && (
+  <div
+    className="advisory-overlay"
+    onClick={() => setShowAdvisory(false)}
+  >
+
+    <div
+      className="advisory-popup"
+      onClick={(e) => e.stopPropagation()}
+    >
+
+      <div className="popup-header">
+
+        <h2>🔔 AI Crop Advisory</h2>
+
+        <button
+          className="close-popup"
+          onClick={() => setShowAdvisory(false)}
+        >
+          ✕
+        </button>
+
+      </div>
+
+      <div className="popup-content">
+
+        {advisory ? (
+
+          <pre>{advisory.advisory}</pre>
+
+        ) : (
+
+          <p>Loading advisory...</p>
+
+        )}
+
+      </div>
+
+    </div>
+
+  </div>
+)}
     <h1 className="page-title">
       🌤 Weather Updates
     </h1>
@@ -177,9 +240,34 @@ function Weather() {
 
     </div>
 
+<div
+  className="advisory-notification"
+  onClick={() => setShowAdvisory(!showAdvisory)}
+>
+
+  <div className="notification-icon">
+    <FaBell />
+     <span className="notification-badge">
+        1
+    </span>
+  </div>
+
+  <div className="notification-text">
+    <span className="notification-title">
+     <h3>Weather Alert</h3> 
+    </span>
+
+    <span className="notification-subtitle">
+      <p>Click here to view weather-based crop recommendations.</p>
+    </span>
+  </div>
+
+</div>
+
     <div className="weather-card">
 
       <div className="top-section">
+
 
         <div className="left-section">
 
@@ -270,6 +358,7 @@ function Weather() {
 </div>
 
 </div>
+
 
 <h2 className="forecast-heading">
   7-Day Forecast
