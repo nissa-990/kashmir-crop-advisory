@@ -3,3 +3,6 @@ Flask-Cors
 tensorflow
 numpy
 Pillow
+python-dotenv
+groq
+gunicorn

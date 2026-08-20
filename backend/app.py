@@ -14,7 +14,6 @@ load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), ".env"))
 # Read Groq API Key
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 print("Groq Key Loaded:", GROQ_API_KEY is not None)
-print(GROQ_API_KEY)
 
 # Create Groq client
 groq_client = Groq(api_key=GROQ_API_KEY)
@@ -43,7 +42,7 @@ def home():
 def test_groq():
     try:
         response = groq_client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="llama-3.3-70b-versatile",  # Updated model ID
             messages=[
                 {
                     "role": "user",
@@ -60,6 +59,9 @@ def test_groq():
         return jsonify({
             "error": str(e)
         }), 500
+
+
+# ---------- Weather Advisory ----------
 @app.route("/weather-advisory", methods=["POST"])
 def weather_advisory():
     try:
@@ -125,10 +127,13 @@ Rules:
 - Use bullet points.
 - Keep the total response under 300 words.
 - Do not invent unrealistic advice.
+- Do not use Markdown formatting.
+- Do not use **, ##, or other Markdown symbols.
+- Use plain text headings and bullet points only.
 """
 
         response = groq_client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",  # Updated model ID
             messages=[
                 {
                     "role": "user",
@@ -148,6 +153,7 @@ Rules:
         return jsonify({
             "error": str(e)
         }), 500
+
 
 # ---------- Disease Detection ----------
 @app.route("/predict", methods=["POST"])
