@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import { FaMapMarkedAlt, FaStore, FaPhoneAlt, FaArrowLeft, FaCheckCircle } from "react-icons/fa";
+import { FaStore, FaPhoneAlt, FaArrowLeft, FaCheckCircle } from "react-icons/fa";
 import "../Dashboard.css"; // Reuses dashboard styling container
 
 function StoreLocator() {
