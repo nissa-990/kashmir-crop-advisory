@@ -1,3 +1,4 @@
+import API_URL from "../api";
 import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 
@@ -264,7 +265,7 @@ function Weather() {
 
 
       const advisoryResponse = await fetch(
-        "http://localhost:5000/weather-advisory",
+        `${API_URL}/weather-advisory`,
         {
           method: "POST",
 
