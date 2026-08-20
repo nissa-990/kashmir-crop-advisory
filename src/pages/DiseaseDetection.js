@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import API_URL from "../api";
 import "./DiseaseDetection.css";
 import vegetableDiseases from "../data/vegetableDiseases";
 
