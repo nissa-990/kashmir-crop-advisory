@@ -1,277 +1,39 @@
 /* =========================
    RESET
 ========================= */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
 /* =========================
    GLOBAL
 ========================= */
+
 body{
-    font-family:"Segoe UI",Arial,sans-serif;
+    font-family:"Segoe UI", Arial, sans-serif;
     color:#23432c;
     line-height:1.6;
-
-    background:
-    linear-gradient(
+    background:linear-gradient(
         135deg,
         #f6fcf7,
         #edf8ef,
         #f8fcf8
     );
 }
+
 /* =========================
    COMMON CONTAINER
 ========================= */
-.container {
-  max-width: 1100px;
-  margin: 40px auto;
-  padding: 20px;
-}
 
-/* =========================
-   HOME PAGE
-========================= */
-
-.home-container{
-    width:100%;
-}
-
-/* =========================
-   HERO SECTION
-========================= */
-
-.hero-section{
-
-    height:85vh;
-
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    text-align:center;
-
-    position:relative;
-
-}
-
-.hero-content{
-
-    background:rgba(0,0,0,.45);
-
-    padding:50px;
-
-    border-radius:18px;
-
-    width:90%;
-    max-width:850px;
-
-    backdrop-filter:blur(5px);
-
-}
-
-.hero-text{
-
-    color:white;
-
-    font-size:20px;
-
-    line-height:1.8;
-
-    margin-bottom:35px;
-
-}
-
-.hero-btn{
-
-    background:#2d6a4f;
-
-    color:white;
-
-    border:none;
-
-    padding:15px 40px;
-
-    font-size:17px;
-
-    border-radius:40px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.hero-btn:hover{
-
-    background:#1b4332;
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(0,0,0,.25);
-
-}
-
-/* =========================
-   ABOUT SECTION
-========================= */
-
-.intro-section{
-
+.container{
     max-width:1100px;
-
-    margin:60px auto;
-
-    padding:45px;
-
-    background:white;
-
-    border-radius:18px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.08);
-
+    margin:40px auto;
+    padding:20px;
 }
 
-.intro-section h2{
-
-    text-align:center;
-
-    font-size:36px;
-
-    color:#1b4332;
-
-    margin-bottom:25px;
-
-}
-
-.intro-section p{
-
-    font-size:18px;
-
-    color:#355e3b;
-
-    line-height:1.9;
-
-    margin-bottom:18px;
-
-    text-align:justify;
-
-}
-
-.note{
-
-    margin-top:30px;
-
-    background:#fff8d6;
-
-    border-left:6px solid #f4b400;
-
-    padding:18px;
-
-    border-radius:8px;
-
-    color:#6b5800;
-
-    font-size:16px;
-
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-
-@media(max-width:900px){
-
-.hero-section{
-
-height:70vh;
-
-}
-
-.hero-content{
-
-padding:35px;
-
-}
-
-.hero-section h1{
-
-font-size:42px;
-
-}
-
-.hero-text{
-
-font-size:18px;
-
-}
-
-}
-
-@media(max-width:600px){
-
-.hero-section{
-
-height:65vh;
-
-}
-
-.hero-content{
-
-padding:25px;
-
-}
-
-.hero-section h1{
-
-font-size:32px;
-
-}
-
-.hero-text{
-
-font-size:16px;
-
-}
-
-.hero-btn{
-
-padding:13px 28px;
-
-font-size:15px;
-
-}
-
-.intro-section{
-
-padding:25px;
-
-margin:30px 15px;
-
-}
-
-.intro-section h2{
-
-font-size:28px;
-
-}
-
-.intro-section p{
-
-font-size:16px;
-
-text-align:left;
-
-}
-
-}
 /* ==========================================
    GLOBAL LEAF BACKGROUND
 ========================================== */
@@ -289,31 +51,29 @@ body::after{
 }
 
 body::before{
-
     background:
-    url("./assets/leaf.jpg") no-repeat left 30px top 80px,
-    url("./assets/leaf.jpg") no-repeat left 50px center,
-    url("./assets/leaf.jpg") no-repeat left 25px bottom 50px;
+        url("./assets/leaf.jpg") no-repeat left 30px top 80px,
+        url("./assets/leaf.jpg") no-repeat left 50px center,
+        url("./assets/leaf.jpg") no-repeat left 25px bottom 50px;
 
     background-size:
-    85px,
-    65px,
-    95px;
+        85px,
+        65px,
+        95px;
 
     opacity:.18;
 }
 
 body::after{
-
     background:
-    url("./assets/leaf.jpg") no-repeat right 30px top 90px,
-    url("./assets/leaf.jpg") no-repeat right 50px center,
-    url("./assets/leaf.jpg") no-repeat right 25px bottom 40px;
+        url("./assets/leaf.jpg") no-repeat right 30px top 90px,
+        url("./assets/leaf.jpg") no-repeat right 50px center,
+        url("./assets/leaf.jpg") no-repeat right 25px bottom 40px;
 
     background-size:
-    85px,
-    65px,
-    95px;
+        85px,
+        65px,
+        95px;
 
     opacity:.18;
 }

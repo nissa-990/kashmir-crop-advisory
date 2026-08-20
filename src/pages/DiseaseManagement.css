@@ -1,121 +1,551 @@
-/* PAGE CONTAINER */
-.container {
-  padding: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-/* GRID OF CARDS */
-.crop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-  margin-top: 25px;
-}
+/* ===================================================
+   PAGE LAYOUT & CONTAINER
+=================================================== */
 
-/* CARD STYLE */
-.crop-card {
-  background-color: #e8f5e9;   /* 🌱 light green */
-  border: 1px solid #c8e6c9;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.crop-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-}
-
-/* CARD TEXT */
-.crop-card h3 {
-  color: #1b5e20;
-  margin-bottom: 10px;
-}
-
-.crop-card p {
-  color: #2e7d32;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-
-/* READ MORE BUTTON */
-.crop-card button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 8px 14px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.crop-card button:hover {
-  background-color: #388e3c;
-}
-
-/* MODAL OVERLAY (BLUR BACKGROUND) */
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.dm-page-wrapper {
   width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.45);
-  backdrop-filter: blur(6px);   /* ✨ blur effect */
+  max-width: 1350px;
+  margin: 0 auto 40px auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+.dm-container {
+  width: 100%;
+  border-radius: 28px;
+  padding: 45px 35px 55px;
+  background: #ffffff !important;
+  box-shadow: 0 15px 35px rgba(11, 60, 54, 0.06);
+  border: 1px solid #e2efe9;
+  box-sizing: border-box;
+}
+
+/* Header Section */
+.dm-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.dm-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e2f4f0;
+  color: #0b3c36;
+  border: 1px solid #b8e2d8;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.dm-title {
+  font-size: 34px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 0 0 14px 0;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+}
+
+.dm-subtitle {
+  font-size: 15px;
+  color: #43635b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===================================================
+   PROFESSIONAL INTERACTIVE CROP CARDS
+=================================================== */
+
+.dm-crop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+.dm-crop-card {
+  background: linear-gradient(180deg, #f3faf4 0%, #e8f5e9 100%) !important;
+  border: 1.5px solid #c8e6c9;
+  border-radius: 22px;
+  padding: 22px 20px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 6px 16px rgba(46, 125, 50, 0.06);
+  box-sizing: border-box;
+}
+
+.dm-crop-card:hover {
+  transform: translateY(-6px);
+  border-color: #2e7d32;
+  box-shadow: 0 14px 30px rgba(46, 125, 50, 0.18);
+  background: #ffffff !important;
+}
+
+/* Card Top Row */
+.dm-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.dm-card-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: #2e7d32;
+  color: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 1000;
+  font-size: 20px;
+  box-shadow: 0 4px 10px rgba(46, 125, 50, 0.2);
 }
 
-/* MODAL BOX */
-.modal {
-  background-color: #f1f8e9;
-  max-width: 850px;
-  width: 90%;
-  max-height: 85vh;
-  overflow-y: auto;
-  padding: 25px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* MODAL HEADINGS */
-.modal h2 {
+.dm-crop-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: #ffffff;
   color: #1b5e20;
-  margin-bottom: 15px;
+  border: 1px solid #c8e6c9;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 10px;
+  border-radius: 20px;
 }
 
-.modal h3 {
-  color: #2e7d32;
-  margin-top: 15px;
+/* Card Main Content */
+.dm-card-main h3 {
+  color: #1b5e20;
+  font-size: 21px;
+  font-weight: 800;
+  margin: 0 0 8px 0;
 }
 
-/* LISTS */
-.modal ul {
-  margin-left: 20px;
-  margin-bottom: 10px;
+.dm-card-desc {
+  color: #385e3c;
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
 }
 
-.modal li {
-  margin-bottom: 6px;
-  color: #333;
-  font-size: 14px;
+/* Card Footer Row */
+.dm-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  border-top: 1px dashed #c8e6c9;
 }
 
-/* CLOSE BUTTON */
-.modal button {
-  margin-top: 15px;
+.dm-disease-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #d32f2f;
+}
+
+.dm-action-btn {
   background-color: #2e7d32;
-  color: white;
+  color: #ffffff;
   border: none;
   padding: 8px 16px;
-  border-radius: 6px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 12.5px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.25s ease;
+}
+
+.dm-crop-card:hover .dm-action-btn {
+  background-color: #1b5e20;
+}
+
+.dm-btn-arrow {
+  font-size: 11px;
+  transition: transform 0.25s ease;
+}
+
+.dm-crop-card:hover .dm-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ===================================================
+   MODAL POSITIONING & VERTICAL SCROLL
+=================================================== */
+
+.dm-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(11, 60, 54, 0.55);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 2500;
+  padding: 35px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+.dm-modal {
+  background-color: #f1f8e9;
+  border: 1.5px solid #c8e6c9;
+  max-width: 760px;
+  width: 100%;
+  height: 75vh !important;
+  max-height: 650px;
+  border-radius: 24px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.dm-modal-header {
+  padding: 18px 24px;
+  background: #e8f5e9;
+  border-bottom: 1.5px solid #c8e6c9;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.dm-modal-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #2e7d32;
+  text-transform: uppercase;
+}
+
+.dm-modal h2 {
+  color: #1b5e20;
+  font-size: 22px;
+  font-weight: 800;
+  margin: 2px 0 0 0;
+}
+
+.dm-modal-close-icon {
+  background: #c8e6c9;
+  border: none;
+  color: #1b5e20;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
   cursor: pointer;
 }
 
-.modal button:hover {
-  background-color: #1b5e20;
+/* Modal Internal Vertical Scroll */
+.dm-modal-body {
+  padding: 20px 24px;
+  flex: 1 1 auto;
+  height: 100%;
+  overflow-y: scroll !important;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-sizing: border-box;
+}
+
+.dm-modal-body::-webkit-scrollbar {
+  width: 9px !important;
+  display: block !important;
+}
+
+.dm-modal-body::-webkit-scrollbar-track {
+  background: #e8f5e9;
+  border-radius: 8px;
+}
+
+.dm-modal-body::-webkit-scrollbar-thumb {
+  background: #2e7d32 !important;
+  border-radius: 8px;
+  border: 2px solid #e8f5e9;
+}
+
+.dm-disease-block {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  border: 1px solid #c8e6c9;
+}
+
+.dm-disease-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.dm-bug-icon {
+  color: #d32f2f;
+  font-size: 16px;
+}
+
+.dm-disease-block h3 {
+  color: #1b5e20;
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.dm-causal-box {
+  background: #f9fbe7;
+  border-left: 4px solid #81c784;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 12.5px;
+  color: #2e7d32;
+  margin-bottom: 12px;
+}
+
+.dm-section-group {
+  margin-bottom: 10px;
+}
+
+.dm-section-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1b5e20;
+  margin: 0 0 6px 0;
+}
+
+.dm-bullet-list {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.dm-bullet-list li {
+  font-size: 13px;
+  color: #333333;
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.dm-modal-footer {
+  padding: 14px 24px;
+  background: #e8f5e9;
+  border-top: 1.5px solid #c8e6c9;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.dm-modal-close-btn {
+  background-color: #2e7d32;
+  color: #ffffff;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* ===================================================
+   MOBILE APPS 2-COLUMN RESPONSIVENESS (< 768px)
+=================================================== */
+
+@media (max-width: 768px) {
+  .dm-page-wrapper {
+    padding: 0 10px;
+  }
+
+  .dm-container {
+    padding: 20px 12px;
+    border-radius: 20px;
+  }
+
+  .dm-title {
+    font-size: 22px;
+  }
+
+  .dm-crop-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .dm-crop-card {
+    padding: 14px 12px;
+    border-radius: 16px;
+  }
+
+  .dm-card-icon-box {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+    border-radius: 10px;
+  }
+
+  .dm-crop-badge {
+    display: none; /* Hides badge on tight mobile screens */
+  }
+
+  .dm-card-main h3 {
+    font-size: 15px;
+  }
+
+  .dm-card-desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin-bottom: 12px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .dm-disease-count {
+    font-size: 10.5px;
+  }
+
+  .dm-action-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+    border-radius: 8px;
+  }
+
+  .dm-modal-overlay {
+    padding: 15px 10px;
+  }
+
+  .dm-modal {
+    height: 80vh !important;
+    border-radius: 18px;
+  }
+}
+/* ===================================================
+   MOBILE APP GRID LAYOUT (< 768px)
+=================================================== */
+
+@media (max-width: 768px) {
+  .dm-page-wrapper {
+    padding: 0 8px;
+    margin-bottom: 20px;
+  }
+
+  .dm-container {
+    padding: 18px 10px;
+    border-radius: 18px;
+  }
+
+  .dm-header {
+    margin-bottom: 22px;
+  }
+
+  .dm-title {
+    font-size: 20px;
+    line-height: 1.3;
+  }
+
+  .dm-subtitle {
+    font-size: 12.5px;
+  }
+
+  /* FORCES CLEAN 2-COLUMN GRID ON MOBILE APP SCREENS */
+  .dm-crop-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* Compact Mobile Card Container */
+  .dm-crop-card {
+    padding: 12px 10px !important;
+    border-radius: 14px !important;
+    min-height: 180px;
+  }
+
+  /* Card Top Row */
+  .dm-card-top {
+    margin-bottom: 10px;
+  }
+
+  .dm-card-icon-box {
+    width: 32px !important;
+    height: 32px !important;
+    font-size: 15px !important;
+    border-radius: 8px !important;
+  }
+
+  .dm-crop-badge {
+    display: none; /* Hide badge on small mobile tiles to save space */
+  }
+
+  /* Card Main Typography */
+  .dm-card-main h3 {
+    font-size: 14.5px !important;
+    margin-bottom: 4px !important;
+  }
+
+  .dm-card-desc {
+    font-size: 11px !important;
+    line-height: 1.35 !important;
+    margin-bottom: 10px !important;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Truncates long text to keep cards uniform */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Card Footer Row */
+  .dm-card-footer {
+    padding-top: 8px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .dm-disease-count {
+    font-size: 10px !important;
+  }
+
+  .dm-action-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 6px 8px !important;
+    font-size: 11px !important;
+    border-radius: 8px !important;
+  }
+
+  /* Modal Screen Top Placement on Mobile App */
+  .dm-modal-overlay {
+    padding: 15px 10px;
+  }
+
+  .dm-modal {
+    height: 82vh !important;
+    border-radius: 18px;
+  }
+
+  .dm-modal-header,
+  .dm-modal-body,
+  .dm-modal-footer {
+    padding: 14px;
+  }
 }

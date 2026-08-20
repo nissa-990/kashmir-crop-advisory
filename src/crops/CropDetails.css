@@ -1,63 +1,194 @@
-.crop-page {
-  max-width: 900px;
-  margin: 30px auto;
-  padding: 20px;
+/* ==========================================
+   CROP DETAILS PAGE (ALIGNED TO NAVBAR)
+========================================== */
+
+.crop-details-wrapper {
+  width: 100%;
+  max-width: 1350px; /* Aligns flush with Navbar width */
+  margin: 0 auto;
+  padding: 20px 20px 50px;
+  min-height: 85vh;
 }
 
-.crop-title {
-  font-size: 28px;
-  margin-bottom: 20px;
+/* Main Container Card */
+.crop-details-card {
+  background: #ffffff;
+  border-radius: 28px;
+  padding: 40px 35px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef5f0;
 }
 
-.section {
-  border: 1px solid #ddd;
-  border-radius: 6px;
+/* Header */
+.crop-header {
+  margin-bottom: 35px;
+  border-bottom: 2px dashed #e2e8f0;
+  padding-bottom: 25px;
+}
+
+.crop-title-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  padding: 6px 16px;
+  border-radius: 30px;
+  font-size: 13.5px;
+  font-weight: 700;
   margin-bottom: 12px;
 }
 
-.section-header {
-  padding: 12px 16px;
-  font-weight: bold;
+.badge-icon {
+  font-size: 15px;
+}
+
+.crop-header h1 {
+  font-size: 38px;
+  font-weight: 800;
+  color: #1b5e20;
+  margin: 0 0 8px 0;
+  font-family: inherit;
+}
+
+.crop-subtitle {
+  font-size: 15.5px;
+  color: #556b62;
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Accordion List */
+.accordion-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.accordion-item {
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  background: #f8faf9;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  border-color: #a5d6a7;
+  background: #ffffff;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.accordion-item.active {
+  border-color: #2e7d32;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(46, 125, 50, 0.08);
+}
+
+/* Accordion Header Button */
+.accordion-header-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 24px;
+  background: transparent;
+  border: none;
   cursor: pointer;
-  background-color: #f5f5f5;
+  text-align: left;
+  outline: none;
 }
 
-.section-content {
-  padding: 16px;
-  background-color: #fff;
-}
-.crop-details {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
-  font-family: Georgia, serif;
+.accordion-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1f5e2b;
+  transition: color 0.25s ease;
 }
 
-.crop-details h1 {
-  font-size: 28px;
-  margin-bottom: 20px;
+.accordion-item.active .accordion-title {
+  color: #1b5e20;
 }
 
-.dropdown-btn {
+/* Chevron Icon Wrapper */
+.chevron-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #d0e6d8;
+  color: #2e7d32;
   display: flex;
   align-items: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 6px 12px;
-  margin-bottom: 8px;
-  border: 1px solid #999;
-  background-color: #f8f8f8;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
+  justify-content: center;
+  font-size: 13px;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  flex-shrink: 0;
 }
 
-.dropdown-btn:hover {
-  background-color: #eee;
+.accordion-item.active .chevron-circle {
+  background: #2e7d32;
+  color: #ffffff;
+  border-color: #2e7d32;
 }
 
-.dropdown-content {
-  margin: 8px 0 16px 20px;
+.chevron-circle.rotate {
+  transform: rotate(180deg);
+}
+
+/* Accordion Content Body */
+.accordion-content-body {
+  padding: 0 24px 22px 24px;
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.inner-content {
   font-size: 15px;
-  line-height: 1.6;
+  line-height: 1.8;
+  color: #334155;
+  border-top: 1px solid #f1f5f9;
+  padding-top: 16px;
+}
+
+/* Common Content Formatting Inside Accordions */
+.inner-content p {
+  margin: 0 0 10px 0;
+}
+
+.inner-content ul, .inner-content ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.inner-content li {
+  margin-bottom: 6px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 600px) {
+  .crop-details-card {
+    padding: 25px 18px;
+  }
+
+  .crop-header h1 {
+    font-size: 28px;
+  }
+
+  .accordion-header-btn {
+    padding: 15px 18px;
+  }
+
+  .accordion-title {
+    font-size: 15.5px;
+  }
 }

@@ -1,41 +1,472 @@
-.container {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+/* ===================================================
+   PAGE LAYOUT & CONTAINER
+=================================================== */
+
+.calendar-page-wrapper,
+.month-detail-container {
+  width: 100%;
   max-width: 1200px;
-  margin: 40px auto;
-  padding: 20px;
-  text-align: center;
+  margin: 30px auto 50px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.table-container {
+.calendar-main-container,
+.detail-header-card {
+  width: 100%;
+  border-radius: 28px;
+  padding: 40px 35px;
+  background: #ffffff !important;
+  box-shadow: 0 15px 35px rgba(11, 60, 54, 0.06);
+  border: 1px solid #e2efe9;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+}
+
+.calendar-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 40px auto;
+}
+
+.calendar-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e2f4f0;
+  color: #0b3c36;
+  border: 1px solid #b8e2d8;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
+}
+
+.calendar-title,
+.detail-title-group h1 {
+  font-size: 36px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 8px 0 12px 0;
+  letter-spacing: -0.5px;
+}
+
+.calendar-subtitle,
+.detail-title-group p {
+  font-size: 15.5px;
+  color: #43635b;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Back Button */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #0b3c36;
+  color: #ffffff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 13.5px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(11, 60, 54, 0.2);
+}
+
+.back-btn:hover {
+  background: #1f6e2e;
+  transform: translateX(-3px);
+}
+
+/* ===================================================
+   SKIN / CREAM CALENDAR TILE GRID (DESKTOP DEFAULT)
+=================================================== */
+
+.real-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 22px;
+  width: 100%;
+}
+
+.calendar-tile {
+  background: linear-gradient(180deg, #fffdf9 0%, #f7f1e5 100%) !important;
+  border: 2px solid #e8dec9;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(184, 168, 142, 0.18);
+  box-sizing: border-box;
+}
+
+.calendar-tile:hover {
+  transform: translateY(-8px);
+  border-color: #0b3c36;
+  box-shadow: 0 16px 35px rgba(11, 60, 54, 0.22);
+}
+
+.tile-top-bar {
+  background: #0b3c36 !important;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px solid #072d28;
+}
+
+.binding-rings {
+  display: flex;
+  gap: 8px;
+}
+
+.binding-rings span {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #72ecdd;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.season-tag {
+  font-size: 11px;
+  font-weight: 800;
+  color: #72ecdd;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.tile-body {
+  padding: 22px 18px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex-grow: 1;
+  position: relative;
+}
+
+.tile-number-badge {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 13px;
+  font-weight: 800;
+  color: #0b3c36;
+  background: #e4d8c3;
+  padding: 3px 9px;
+  border-radius: 8px;
+  border: 1px solid #d4c4a8;
+}
+
+.tile-icon-box {
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  background: #efe4d1;
+  color: #0b3c36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  margin-bottom: 14px;
+  border: 1.5px solid #dfcfb2;
+  transition: all 0.3s ease;
+}
+
+.calendar-tile:hover .tile-icon-box {
+  background: #0b3c36;
+  color: #72ecdd;
+  border-color: #0b3c36;
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.tile-month-name {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 0 0 6px 0;
+}
+
+.tile-activity-text {
+  font-size: 12.5px;
+  color: #63533e;
+  line-height: 1.4;
+  margin: 0;
+  font-weight: 600;
+}
+
+.tile-footer {
+  background: #f0e6d5;
+  border-top: 1px solid #e2d4bc;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #0b3c36;
+  transition: all 0.25s ease;
+}
+
+.tile-arrow {
+  font-size: 11px;
+  transition: transform 0.25s ease;
+}
+
+.calendar-tile:hover .tile-footer {
+  background: #0b3c36;
+  color: #ffffff;
+}
+
+.calendar-tile:hover .tile-arrow {
+  transform: translateX(4px);
+  color: #72ecdd;
+}
+
+/* ===================================================
+   EASY-READ PROFESSIONAL TABLE STYLING
+=================================================== */
+
+.table-card-wrapper {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 15px 35px rgba(11, 60, 54, 0.08);
+  border: 1px solid #e2efe9;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Horizontal Scroll Container */
+.table-responsive-box {
   width: 100%;
   overflow-x: auto;
-  margin-top: 25px;
+  border-radius: 16px;
+  border: 1px solid #d8ece7;
+  background: #ffffff;
 }
 
-.crop-table {
+.modern-crop-table {
   width: 100%;
-  border-collapse: collapse;
-  background: white;
+  min-width: 1100px;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: #ffffff;
+  font-size: 13.5px;
+  text-align: left;
 }
 
-.crop-table th,
-.crop-table td {
-  border: 1px solid #ccc;
-  padding: 12px 16px;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 1.5;
+/* Header Formatting */
+.modern-crop-table th {
+  background: #0b3c36 !important;
+  color: #ffffff !important;
+  font-weight: 700;
+  padding: 16px 20px;
+  text-transform: uppercase;
+  font-size: 11.5px;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+  border-bottom: 3px solid #072d28;
+  position: sticky;
+  top: 0;
+  z-index: 2;
 }
 
-.crop-table th {
-  background: #2e7d32;
-  color: white;
+/* Specific Column Width Control */
+.modern-crop-table th.th-crop, .modern-crop-table td.td-crop { min-width: 120px; }
+.modern-crop-table th.th-seed_rate, .modern-crop-table td.td-seed_rate { min-width: 220px; }
+.modern-crop-table th.th-time_of_sowing, .modern-crop-table td.td-time_of_sowing { min-width: 160px; }
+.modern-crop-table th.th-time_of_transplanting, .modern-crop-table td.td-time_of_transplanting { min-width: 160px; }
+.modern-crop-table th.th-spacing, .modern-crop-table td.td-spacing { min-width: 180px; }
+.modern-crop-table th.th-nutrient_management, .modern-crop-table td.td-nutrient_management { min-width: 280px; }
+.modern-crop-table th.th-recommended_varieties, .modern-crop-table td.td-recommended_varieties { min-width: 220px; }
+.modern-crop-table th.th-recommended_hybrids, .modern-crop-table td.td-recommended_hybrids { min-width: 220px; }
+
+/* Cell Formatting */
+.modern-crop-table td {
+  padding: 18px 20px;
+  color: #2d3748;
+  vertical-align: top;
+  line-height: 1.6;
+  border-bottom: 1px solid #eef4f2;
+}
+
+.modern-crop-table tbody tr:nth-child(even) {
+  background-color: #fcfdfd;
+}
+
+.modern-crop-table tbody tr:hover {
+  background-color: #f0f8f5;
+}
+
+/* Badges & Pills */
+.crop-pill {
+  display: inline-block;
+  background: #0b3c36;
+  color: #72ecdd;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.time-highlight {
+  font-weight: 700;
+  color: #1b5e20;
+  background: #eefdf4;
+  border: 1px solid #c6f6d5;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  white-space: nowrap;
+}
+
+/* Cell Bullet Lists for Multi-line Data */
+.cell-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cell-list li {
+  position: relative;
+  padding-left: 14px;
+  font-size: 13px;
+  color: #334155;
+}
+
+.cell-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #0b3c36;
   font-weight: bold;
 }
 
-.crop-table tr:nth-child(even) {
-  background: #f8f8f8;
+/* Scrollbar Customization */
+.table-responsive-box::-webkit-scrollbar {
+  height: 8px;
 }
 
-.crop-table tr:hover {
-  background: #eef7ee;
+.table-responsive-box::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+.table-responsive-box::-webkit-scrollbar-thumb {
+  background: #0b3c36;
+  border-radius: 10px;
+}
+
+/* ===================================================
+   MOBILE-ONLY 3-COLUMN HORIZONTAL GRID (< 700px)
+=================================================== */
+
+@media (max-width: 700px) {
+  .calendar-page-wrapper,
+  .month-detail-container {
+    padding: 0 10px;
+    margin: 15px auto 30px auto;
+  }
+
+  .calendar-main-container,
+  .detail-header-card {
+    padding: 20px 12px;
+    border-radius: 20px;
+  }
+
+  .calendar-title,
+  .detail-title-group h1 {
+    font-size: 24px;
+  }
+
+  /* FORCES EXACTLY 3 COLUMNS HORIZONTALLY */
+  .real-calendar-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+  }
+
+  /* Compact Card Layout to fit 3 items side-by-side */
+  .calendar-tile {
+    border-radius: 14px;
+    border-width: 1.5px;
+  }
+
+  .tile-top-bar {
+    padding: 6px 8px;
+    justify-content: center;
+  }
+
+  .binding-rings {
+    display: none; /* Hide rings on mobile to save vertical space */
+  }
+
+  .season-tag {
+    font-size: 9px;
+    letter-spacing: 0.4px;
+  }
+
+  .tile-body {
+    padding: 10px 4px 8px;
+  }
+
+  .tile-number-badge {
+    display: none; /* Hide top-right number badge on small screens */
+  }
+
+  .tile-icon-box {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    margin-bottom: 6px;
+  }
+
+  .tile-month-name {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .tile-activity-text {
+    font-size: 9.5px;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .tile-footer {
+    padding: 6px;
+    justify-content: center;
+  }
+
+  .tile-footer span {
+    display: none; /* Hide 'View Schedule' text on mobile footer */
+  }
+
+  .tile-arrow {
+    font-size: 11px;
+  }
+
+  .table-card-wrapper {
+    padding: 12px;
+    border-radius: 16px;
+  }
 }

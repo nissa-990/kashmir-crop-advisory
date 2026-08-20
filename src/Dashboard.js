@@ -1,4 +1,4 @@
-import "./Dashboard.css";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import {
   FaSeedling,
@@ -8,98 +8,114 @@ import {
   FaLandmark,
   FaNotesMedical,
   FaBug,
+  FaMapMarkedAlt,
 } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
+import "./Dashboard.css";
 
 function Dashboard() {
   const navigate = useNavigate();
 
+  const services = [
+    {
+      title: "Crop Advisory",
+      desc: "View tailored crop recommendations for vegetable cultivation.",
+      icon: <FaSeedling />,
+      route: "/crop-advisory",
+      badge: "Popular",
+    },
+    {
+      title: "Market Prices",
+      desc: "View the latest vegetable market prices across Kashmir mandis.",
+      icon: <FaRupeeSign />,
+      route: "/market-prices",
+    },
+    {
+      title: "Weather Updates",
+      desc: "Check live weather forecasts, temperature trends, and alerts.",
+      icon: <FaCloudSun />,
+      route: "/weather",
+      badge: (
+        <span className="live-badge">
+          <span className="live-dot"></span> Live
+        </span>
+      ),
+    },
+    {
+      title: "Government Schemes",
+      desc: "Explore agricultural subsidies and government support schemes.",
+      icon: <FaLandmark />,
+      route: "/government-schemes",
+    },
+    {
+      title: "Crop Calendar",
+      desc: "View month-wise local sowing, irrigation, and harvesting schedules.",
+      icon: <FaCalendarAlt />,
+      route: "/crop-calendar",
+    },
+    {
+      title: "Disease Management",
+      desc: "Learn crop disease prevention, control, and treatment methods.",
+      icon: <FaNotesMedical />,
+      route: "/disease-management",
+    },
+    {
+      title: "Disease Detection",
+      desc: "Upload crop leaf images for instant AI-based disease diagnosis.",
+      icon: <FaBug />,
+      route: "/disease-detection",
+      badge: "AI Powered",
+    },
+    {
+      title: "Agri Store Locator",
+      desc: "Locate verified shops across Kashmir for seeds, fertilizers, and tools.",
+      icon: <FaMapMarkedAlt />,
+      route: "/store-locator",
+      badge: "New",
+    },
+  ];
+
   return (
-    <div className="dashboard-page">
-
-      <div className="container">
-
+    <div className="teal-dashboard-wrapper">
+      <div className="teal-container">
+        
+        {/* Header Title Section */}
         <div className="dashboard-header">
-          <h2>🌿 Explore Agricultural Services</h2>
-
-          <p>
-            Choose a service to access crop advisory, weather updates,
-            market prices, disease management and government schemes.
+          <span className="pill-badge">🌱 Kashmiri Farmer Hub</span>
+          <h1 className="dashboard-title">Explore Agricultural Services</h1>
+          <p className="dashboard-subtitle">
+            Choose a service to access intelligent crop advisories, live weather updates, 
+            market rates, disease control, store locations, and government support schemes.
           </p>
         </div>
 
-        <div className="dashboard">
+        {/* Dashboard Services Grid */}
+        <div className="services-glass-grid">
+          {services.map((service, index) => (
+            <div
+              key={index}
+              className="glass-service-card"
+              onClick={() => navigate(service.route)}
+            >
+              {service.badge && (
+                <span className="card-top-badge">{service.badge}</span>
+              )}
 
-          {/* Crop Advisory */}
-          <div
-            className="card"
-            onClick={() => navigate("/crop-advisory")}
-          >
-            <FaSeedling className="card-icon" />
-            <h3>Crop Advisory</h3>
-            <p>View crop recommendations for vegetable cultivation.</p>
-          </div>
+              <div className="service-icon-wrapper">
+                {service.icon}
+              </div>
 
-          {/* Market Prices */}
-          <div
-            className="card"
-            onClick={() => navigate("/market-prices")}
-          >
-            <FaRupeeSign className="card-icon" />
-            <h3>Market Prices</h3>
-            <p>View the latest vegetable market prices.</p>
-          </div>
+              <h3 className="card-service-title">{service.title}</h3>
+              <p className="card-service-desc">{service.desc}</p>
 
-          {/* Weather */}
-          <div
-            className="card"
-            onClick={() => navigate("/weather")}
-          >
-            <FaCloudSun className="card-icon" />
-            <h3>Weather Updates</h3>
-            <p>Check live weather forecasts for Kashmir.</p>
-          </div>
-
-          {/* Government Schemes */}
-          <div
-            className="card"
-            onClick={() => navigate("/government-schemes")}
-          >
-            <FaLandmark className="card-icon" />
-            <h3>Government Schemes</h3>
-            <p>Explore subsidies and government support schemes.</p>
-          </div>
-
-          {/* Crop Calendar */}
-          <div
-            className="card"
-            onClick={() => navigate("/crop-calendar")}
-          >
-            <FaCalendarAlt className="card-icon" />
-            <h3>Crop Calendar</h3>
-            <p>View the month-wise sowing and harvesting schedule.</p>
-          </div>
-
-          {/* Disease Management */}
-          <div
-            className="card"
-            onClick={() => navigate("/disease-management")}
-          >
-            <FaNotesMedical className="card-icon" />
-            <h3>Disease Management</h3>
-            <p>Learn disease prevention and treatment methods.</p>
-          </div>
-
-          {/* Disease Detection */}
-          <div
-            className="card"
-            onClick={() => navigate("/disease-detection")}
-          >
-            <FaBug className="card-icon" />
-            <h3>Disease Detection</h3>
-            <p>Upload crop images for AI-based disease detection.</p>
-          </div>
-
+              <div className="card-action-link">
+                <span>Access Service</span>
+                <IoIosArrowForward className="arrow-icon" />
+              </div>
+            </div>
+          ))}
         </div>
+
       </div>
     </div>
   );

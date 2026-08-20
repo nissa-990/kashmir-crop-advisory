@@ -1,387 +1,197 @@
-/* ==========================================
-   CONTACT PAGE
-========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-.contact-page{
-
-    min-height:100vh;
-
-    padding:60px 20px;
-
-    background:linear-gradient(
-        135deg,
-        #f8fff8,
-        #eef9ef,
-        #f8fff8
-    );
-
+.contact-page-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  margin: 30px auto 60px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-/* ==========================================
-   CONTACT CONTAINER
-========================================== */
-
-.contact-container{
-
-    max-width:1100px;
-
-    margin:auto;
-
-    background:rgba(255,255,255,.96);
-
-    border-radius:28px;
-
-    padding:60px 50px 0;
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.08);
-
-    overflow:hidden;
-
+.contact-main-card {
+  width: 100%;
+  background: #ffffff !important;
+  border-radius: 28px;
+  padding: 45px 40px 50px;
+  box-shadow: 0 15px 35px rgba(11, 60, 54, 0.06);
+  border: 1px solid #e2efe9;
+  box-sizing: border-box;
 }
 
-/* ==========================================
-   HEADING
-========================================== */
-
-.contact-container h1{
-
-    text-align:center;
-
-    font-size:54px;
-
-    color:#1F5E2B;
-
-    margin-bottom:10px;
-
-    font-weight:700;
-
+/* Header */
+.contact-header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 35px auto;
 }
 
-/* ==========================================
-   SUBTITLE
-========================================== */
-
-.contact-container h3{
-
-    text-align:center;
-
-    font-size:24px;
-
-    font-weight:500;
-
-    color:#444;
-
-    margin-bottom:45px;
-
-}
-/* ==========================================
-   CONTACT FORM
-========================================== */
-
-.contact-form{
-
-    max-width:700px;
-
-    margin:0 auto 60px;
-
+.contact-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #e2f4f0;
+  color: #0b3c36;
+  border: 1px solid #b8e2d8;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 16px;
 }
 
-/* ==========================================
-   INPUT ROW
-========================================== */
-
-.input-row{
-
-    display:flex;
-
-    gap:25px;
-
-    margin-bottom:30px;
-
+.contact-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 0 0 12px 0;
 }
 
-.input-box{
-
-    flex:1;
-
-    display:flex;
-
-    flex-direction:column;
-
+.contact-subtitle {
+  font-size: 15.5px;
+  color: #43635b;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.input-box label{
-
-    font-size:14px;
-
-    color:#444;
-
-    margin-bottom:8px;
-
-    font-weight:600;
-
+/* Form Layout */
+.contact-form {
+  max-width: 750px;
+  margin: 0 auto 45px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* ==========================================
-   INPUTS
-========================================== */
-
-.input-box input{
-
-    width:100%;
-
-    padding:16px 22px;
-
-    border:none;
-
-    outline:none;
-
-    border-radius:30px;
-
-    background:#eeeeee;
-
-    font-size:15px;
-
-    color:#333;
-
-    transition:.3s;
-
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
 }
 
-.input-box input:focus{
-
-    background:#f8fff8;
-
-    box-shadow:0 0 0 2px #6CBF65;
-
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
 }
 
-/* ==========================================
-   SUBMIT BUTTON
-========================================== */
-
-.contact-form button{
-
-    width:100%;
-
-    border:none;
-
-    border-radius:30px;
-
-    padding:16px;
-
-    background:#2E7D32;
-
-    color:white;
-
-    font-size:16px;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-
-    cursor:pointer;
-
-    transition:.35s;
-
+.form-group label {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0b3c36;
 }
 
-.contact-form button:hover{
-
-    background:#1F5E2B;
-
-    transform:translateY(-3px);
-
-    box-shadow:0 10px 25px rgba(46,125,50,.25);
-
-}
-/* ==========================================
-   CONTACT INFORMATION
-========================================== */
-
-.contact-info{
-
-    background:#f3f5f4;
-
-    margin:0 -50px;
-
-    padding:60px 40px;
-
-    display:grid;
-
-    grid-template-columns:repeat(3,1fr);
-
-    gap:40px;
-
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1.5px solid #d8ece7;
+  background: #f8faf9;
+  font-size: 14px;
+  font-family: inherit;
+  color: #2d3748;
+  outline: none;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
 }
 
-/* ==========================================
-   INFO BOX
-========================================== */
-
-.info-box{
-
-    text-align:center;
-
+.form-group input:focus,
+.form-group textarea:focus {
+  background: #ffffff;
+  border-color: #0b3c36;
+  box-shadow: 0 4px 16px rgba(11, 60, 54, 0.1);
 }
 
-/* ==========================================
-   CIRCLE ICON
-========================================== */
-
-.circle{
-
-    width:90px;
-
-    height:90px;
-
-    margin:0 auto 20px;
-
-    border-radius:50%;
-
-    background:linear-gradient(
-        135deg,
-        #D8F3DC,
-        #B7E4C7
-    );
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    font-size:34px;
-
-    color:#2E7D32;
-
-    box-shadow:
-        0 12px 25px rgba(46,125,50,.15);
-
-    transition:.35s;
-
+.submit-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #0b3c36;
+  color: #ffffff;
+  border: none;
+  padding: 15px 32px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 18px rgba(11, 60, 54, 0.2);
+  margin-top: 10px;
 }
 
-.circle:hover{
-
-    transform:translateY(-8px) scale(1.08);
-
-    box-shadow:
-        0 18px 35px rgba(46,125,50,.25);
-
+.submit-btn:hover:not(:disabled) {
+  background: #1f6e2e;
+  transform: translateY(-2px);
 }
 
-/* ==========================================
-   TITLE
-========================================== */
-
-.info-box h2{
-
-    font-size:22px;
-
-    color:#1F5E2B;
-
-    margin-bottom:12px;
-
+.form-status {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: 10px;
+  color: #0b3c36;
 }
 
-/* ==========================================
-   TEXT
-========================================== */
-
-.info-box p{
-
-    color:#666;
-
-    font-size:16px;
-
-    line-height:1.8;
-
+/* Info Cards Grid */
+.contact-info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  border-top: 1px solid #eef6f3;
+  padding-top: 40px;
 }
 
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media(max-width:900px){
-
-.contact-container{
-
-    padding:40px 25px 0;
-
+.info-card {
+  background: linear-gradient(180deg, #fffdf9 0%, #f7f1e5 100%);
+  border: 1.5px solid #e8dec9;
+  border-radius: 20px;
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
-.input-row{
-
-    flex-direction:column;
-
+.info-card:hover {
+  transform: translateY(-4px);
+  border-color: #0b3c36;
 }
 
-.contact-info{
-
-    margin:0 -25px;
-
-    grid-template-columns:1fr;
-
-    gap:50px;
-
+.info-icon-wrapper {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: #efe4d1;
+  color: #0b3c36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 12px;
+  border: 1px solid #dfcfb2;
 }
 
-.contact-container h1{
-
-    font-size:40px;
-
+.info-card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 0 0 6px 0;
 }
 
-.contact-container h3{
-
-    font-size:20px;
-
+.info-card p {
+  font-size: 13.5px;
+  color: #52736b;
+  margin: 0;
+  line-height: 1.5;
+  font-weight: 600;
 }
 
-}
-
-@media(max-width:600px){
-
-.contact-page{
-
-    padding:25px 10px;
-
-}
-
-.contact-container{
-
-    border-radius:20px;
-
-}
-
-.contact-container h1{
-
-    font-size:32px;
-
-}
-
-.contact-container h3{
-
-    font-size:17px;
-
-}
-
-.contact-form{
-
-    margin-bottom:40px;
-
-}
-
-.circle{
-
-    width:75px;
-
-    height:75px;
-
-    font-size:28px;
-
-}
-
+@media (max-width: 768px) {
+  .form-row, .contact-info-grid {
+    grid-template-columns: 1fr;
+  }
 }

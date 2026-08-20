@@ -1,285 +1,298 @@
-/* ==========================================
-   DASHBOARD PAGE
-========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
 
-.dashboard-page{
-    position:relative;
-    min-height:100vh;
-    overflow:hidden;
+/* ===================================================
+   PAGE WRAPPER
+=================================================== */
 
- 
+.teal-dashboard-wrapper {
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto 30px auto;
+  padding: 0 15px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  box-sizing: border-box;
 }
 
-/* ==========================================
-   DECORATIVE LEAVES
-========================================== */
-
-.leaf{
-
-    position:absolute;
-
-    z-index:1;
-
-    opacity:.28;
-
-    pointer-events:none;
-
-    filter:drop-shadow(0 8px 18px rgba(76,175,80,.18));
+/* White Dashboard Main Container */
+.teal-container {
+  width: 100%;
+  border-radius: 28px;
+  padding: 50px 35px 60px;
+  background: #ffffff !important;
+  box-shadow: 0 15px 35px rgba(11, 60, 54, 0.06);
+  border: 1px solid #e2efe9;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* ---------- LEFT SIDE ---------- */
-
-.leaf1{
-
-    width:170px;
-
-    top:20px;
-
-    left:15px;
-
-    transform:rotate(-25deg);
-
+/* Header Section */
+.dashboard-header {
+  text-align: center;
+  max-width: 760px;
+  margin: 0 auto 45px;
 }
 
-.leaf2{
-
-    width:115px;
-
-    top:280px;
-
-    left:60px;
-
-    transform:rotate(35deg);
-
+.pill-badge {
+  display: inline-block;
+  background: #e2f4f0;
+  color: #0b3c36;
+  border: 1px solid #b8e2d8;
+  padding: 6px 18px;
+  border-radius: 30px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 16px;
 }
 
-.leaf3{
-
-    width:150px;
-
-    bottom:35px;
-
-    left:20px;
-
-    transform:rotate(-90deg);
-
+.dashboard-title {
+  font-size: 38px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.5px;
 }
 
-/* ---------- RIGHT SIDE ---------- */
-
-.leaf4{
-
-    width:170px;
-
-    top:20px;
-
-    right:15px;
-
-    transform:rotate(25deg);
-
+.dashboard-subtitle {
+  font-size: 15.5px;
+  color: #43635b;
+  line-height: 1.6;
+  margin: 0;
 }
 
-.leaf5{
-
-    width:115px;
-
-    top:300px;
-
-    right:60px;
-
-    transform:rotate(-35deg);
-
+/* Services Grid Layout (Desktop Default: 4-Column Responsive Grid) */
+.services-glass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 22px;
 }
 
-.leaf6{
+/* ===================================================
+   LIGHT TEAL GRADIENT CARDS
+=================================================== */
 
-    width:150px;
-
-    bottom:35px;
-
-    right:20px;
-
-    transform:rotate(120deg);
-
+.glass-service-card {
+  background: linear-gradient(135deg, #124d45 0%, #1b6158 50%, #28786d 100%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 22px;
+  padding: 30px 22px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 8px 20px rgba(11, 60, 54, 0.15);
+  box-sizing: border-box;
 }
 
-/* ==========================================
-   DASHBOARD CONTAINER
-========================================== */
-
-.container{
-
-    position:relative;
-
-    z-index:2;
-
-    max-width:1350px;
-
-    margin:60px auto;
-
-    padding:60px 45px;
-
-    background:linear-gradient(
-        135deg,
-        rgba(255,255,255,.94),
-        rgba(242,252,243,.95)
-    );
-
-    border-radius:28px;
-
-    box-shadow:
-        0 20px 45px rgba(0,0,0,.08);
-
+.glass-service-card:hover {
+  transform: translateY(-8px);
+  background: linear-gradient(135deg, #0b3c36 0%, #124d45 50%, #1e695f 100%) !important;
+  border-color: #72ecdd;
+  box-shadow: 0 16px 35px rgba(11, 60, 54, 0.28);
 }
 
-/* ==========================================
-   HEADER
-========================================== */
-
-.dashboard-header{
-
-    text-align:center;
-
-    margin-bottom:50px;
-
+/* Top Pill Badge */
+.card-top-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: #72ecdd;
+  color: #0b3c36;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 12px;
+  text-transform: uppercase;
 }
 
-.dashboard-header h2{
-
-    font-size:44px;
-
-    color:#4CAF50;
-
-    font-weight:700;
-
-    margin-bottom:15px;
-
+/* Icon Wrapper */
+.service-icon-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #72ecdd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
 }
 
-.dashboard-header p{
-
-    max-width:720px;
-
-    margin:auto;
-
-    color:#66756d;
-
-    font-size:18px;
-
-    line-height:1.8;
-
+.glass-service-card:hover .service-icon-wrapper {
+  transform: scale(1.1);
+  background: #72ecdd;
+  color: #0b3c36;
 }
 
-/* ==========================================
-   DASHBOARD GRID
-========================================== */
-
-.dashboard{
-
-    display:grid;
-
-    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
-
-    gap:22px;
-
+/* Card Content */
+.card-service-title {
+  font-size: 19px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px 0;
 }
 
-/* ==========================================
-   CARDS
-========================================== */
-
-.card{
-
-    background:linear-gradient(
-        135deg,
-        #D8F3DC,
-        #B7E4C7
-    );
-
-    border:1px solid #95D5B2;
-
-    border-radius:22px;
-
-    min-height:180px;
-
-    padding:24px 18px;
-
-    cursor:pointer;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-    text-align:center;
-
-    transition:.35s;
-
-    box-shadow:
-        0 12px 25px rgba(46,125,50,.12);
-
+.card-service-desc {
+  font-size: 13.5px;
+  color: #d1eae4;
+  line-height: 1.6;
+  margin: 0 0 24px 0;
+  flex-grow: 1;
 }
 
-.card:hover{
-
-    transform:translateY(-8px) scale(1.04);
-
-    background:linear-gradient(
-        135deg,
-        #D6F5DD,
-        #A7DBB3
-    );
-
-    box-shadow:
-        0 18px 35px rgba(46,125,50,.22);
-
+/* Card Action Link */
+.card-action-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #72ecdd;
+  font-size: 14px;
+  font-weight: 700;
+  transition: gap 0.25s ease, color 0.25s ease;
 }
 
-/* ==========================================
-   ICONS
-========================================== */
-
-.card-icon{
-
-    font-size:42px;
-
-    color:#2E7D32;
-
-    margin-bottom:15px;
-
+.arrow-icon {
+  font-size: 16px;
+  transition: transform 0.25s ease;
 }
 
-/* ==========================================
-   CARD TITLE
-========================================== */
-
-.card h3{
-
-    font-size:20px;
-
-    font-weight:700;
-
-    color:#1F5E2B;
-
-    margin:10px 0;
-
+.glass-service-card:hover .card-action-link {
+  color: #ffffff;
 }
 
-/* ==========================================
-   CARD DESCRIPTION
-========================================== */
+.glass-service-card:hover .arrow-icon {
+  transform: translateX(4px);
+}
 
-.card p{
+/* ===================================================
+   RED LIVE BADGE & PULSING DOT
+=================================================== */
 
-    font-size:15px;
+.live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  background: rgba(220, 38, 38, 0.85);
+  padding: 4px 10px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
 
-    line-height:1.7;
+.live-dot {
+  width: 7px;
+  height: 7px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+  animation: pulseLive 1.6s infinite cubic-bezier(0.66, 0, 0, 1);
+}
 
-    color:#45634E;
+@keyframes pulseLive {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
 
-    margin:0;
+/* ===================================================
+   MOBILE-ONLY 2-COLUMN GRID (< 768px)
+=================================================== */
 
+@media (max-width: 768px) {
+  .teal-dashboard-wrapper {
+    padding: 0 10px;
+    margin-bottom: 20px;
+  }
+
+  .teal-container {
+    padding: 24px 14px 32px;
+    border-radius: 20px;
+  }
+
+  .dashboard-header {
+    margin-bottom: 25px;
+  }
+
+  .dashboard-title {
+    font-size: 24px;
+  }
+
+  .dashboard-subtitle {
+    font-size: 13.5px;
+  }
+
+  /* FORCES 2-COLUMN GRID ON MOBILE APPS & PHONES */
+  .services-glass-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  .glass-service-card {
+    padding: 16px 12px 14px;
+    border-radius: 16px;
+  }
+
+  .card-top-badge {
+    top: 10px;
+    right: 10px;
+    font-size: 9px;
+    padding: 3px 7px;
+    border-radius: 8px;
+  }
+
+  .live-badge {
+    font-size: 9px;
+    padding: 3px 7px;
+  }
+
+  .service-icon-wrapper {
+    width: 42px;
+    height: 42px;
+    font-size: 20px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+  }
+
+  .card-service-title {
+    font-size: 14.5px;
+    margin-bottom: 6px;
+    line-height: 1.25;
+  }
+
+  .card-service-desc {
+    font-size: 11.5px;
+    line-height: 1.4;
+    margin-bottom: 14px;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Truncates long text to keep cards uniform */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .card-action-link {
+    font-size: 12px;
+  }
+
+  .arrow-icon {
+    font-size: 13px;
+  }
 }

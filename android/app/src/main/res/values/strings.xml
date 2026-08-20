@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Beoal Sanz- Kashmir Crop Advisory</string>
+    <string name="title_activity_main">Beoal Sanz- Kashmir Crop Advisory</string>
+    <string name="package_name">com.nissa.beoalsanzcropadvisory</string>
+    <string name="custom_url_scheme">com.nissa.beoalsanzcropadvisory</string>
+</resources>

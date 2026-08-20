@@ -1,182 +1,312 @@
-.search-box {
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Naskh+Arabic:wght@400;600;700&display=swap');
+
+/* ===================================================
+   PAGE CONTAINER & TOP BANNER (MATCHED TO NAVBAR)
+=================================================== */
+
+.crop-advisory-page-wrapper {
   width: 100%;
-  padding: 10px;
-  margin: 15px 0;
-  font-size: 16px;
-  border-radius: 6px;
-  border: 1px solid #ccc;
+  max-width: 1200px; /* Aligned to match the Navbar width */
+  margin: 30px auto 50px auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-.crop-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
-  gap: 20px;
+.crop-advisory-main-card {
+  width: 100%;
+  border-radius: 24px;
+  padding: 35px 30px 45px;
+  background: #ffffff !important;
+  box-shadow: 0 10px 30px rgba(11, 60, 54, 0.05);
+  border: 1px solid #e2efe9;
+  box-sizing: border-box;
 }
 
-.crop-card {
-  text-align: center;
-  background: #f7f7f7;
-  padding: 15px;
-  border-radius: 12px;
-  cursor: pointer;
+.advisory-top-banner {
+  text-align: left;
+  margin-bottom: 24px;
 }
 
-.crop-card img {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  margin-bottom: 10px;
-}
-
-.crop-card p {
-  font-size: 14px;
-  font-weight: 500;
-}
-/* Remove default link styling from crop cards */
-.crop-card {
-  text-decoration: none;
-  color: black;
-  display: block;
-}
-.search-area{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:10px;
-    margin-bottom:20px;
-}
-
-.voice-btn{
-    width:55px;
-    height:55px;
-    border:none;
-    border-radius:50%;
-    background:#2e7d32;
-    color:white;
-    font-size:22px;
-    cursor:pointer;
-}
-
-.voice-btn:hover{
-    background:#1b5e20;
-}
-
-.voice-message{
-    text-align:center;
-    color:#2e7d32;
-    margin-bottom:20px;
-    font-weight:600;
-}
-
-.crop-name{
-    text-align:center;
-}
-
-.english-name{
-    font-weight:bold;
-    margin-bottom:4px;
-}
-
-.kashmiri-name{
-    color:#2e7d32;
-    font-size:18px;
-}
-
-.crop-card p {
-  margin-top: 10px;
-  font-weight: 500;
-  color: black;
-}
-
-/* Optional: hover effect like navbar */
-.crop-card:hover p {
-  color: #2e7d32; /* same green shade as navbar */
-}
-.search-area {
+.header-badge-row {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 12px;
-  max-width: 760px;
-  margin: 0 auto 12px;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
-.search-area .search-box {
-  flex: 1;
-  margin: 0;
-}
-
-.voice-btn {
-  min-width: 110px;
-  min-height: 48px;
-  padding: 11px 16px;
-  border: none;
-  border-radius: 10px;
-  background: #2e7d32;
-  color: white;
-  font-size: 15px;
-  cursor: pointer;
-  white-space: nowrap;
-}
-
-.voice-btn:hover {
-  background: #1b5e20;
-}
-
-.voice-btn.listening {
-  background: #c62828;
-}
-
-.voice-btn:disabled {
-  cursor: not-allowed;
-  opacity: 0.85;
-}
-
-.voice-message {
-  margin: 8px 0 22px;
-  text-align: center;
-  color: #2e7d32;
-  font-weight: 600;
-}
-
-.crop-name {
-  text-align: center;
-}
-
-.english-name {
-  margin: 8px 0 3px;
+.banner-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #e2f4f0;
+  color: #0b3c36;
+  border: 1px solid #b8e2d8;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
   font-weight: 700;
 }
 
-.kashmiri-name {
+.category-tag-badge {
+  background: #0b3c36;
+  color: #ffffff;
+  padding: 5px 14px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.banner-title {
+  font-size: 32px;
+  font-weight: 800;
+  color: #0b3c36;
+  margin: 0 0 8px 0;
+  letter-spacing: -0.5px;
+}
+
+.banner-subtitle {
+  font-size: 15px;
+  color: #55756c;
+  line-height: 1.5;
   margin: 0;
-  color: #2e7d32;
-  font-size: 18px;
-  line-height: 1.8;
-  font-family: "Noto Nastaliq Urdu", "Noto Sans Arabic", serif;
 }
 
-.no-crops-found {
-  margin: 40px auto;
-  text-align: center;
+/* ===================================================
+   SEARCH & VOICE BAR
+=================================================== */
+
+.advisory-search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 24px;
 }
 
-.no-crops-found button {
-  padding: 10px 18px;
+.search-bar-inner {
+  position: relative;
+  flex: 1;
+}
+
+.search-glass-icon {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #0b3c36;
+  font-size: 16px;
+}
+
+.advisory-search-input {
+  width: 100%;
+  padding: 14px 18px 14px 48px;
+  border-radius: 16px;
+  border: 1.5px solid #d8ece7;
+  background: #f8faf9;
+  font-size: 14.5px;
+  font-family: inherit;
+  color: #0b3c36;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.advisory-search-input:focus {
+  background: #ffffff;
+  border-color: #0b3c36;
+  box-shadow: 0 4px 14px rgba(11, 60, 54, 0.08);
+}
+
+.voice-search-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0b3c36;
+  color: #ffffff;
   border: none;
-  border-radius: 8px;
-  background: #2e7d32;
-  color: white;
+  padding: 14px 22px;
+  border-radius: 16px;
+  font-size: 14px;
+  font-weight: 700;
   cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-@media (max-width: 650px) {
-  .search-area {
-    flex-direction: column;
+.voice-search-btn:hover:not(:disabled) {
+  background: #1f6e2e;
+}
+
+.voice-search-btn.active-listening {
+  background: #dc2626;
+  animation: pulseVoice 1.4s infinite;
+}
+
+@keyframes pulseVoice {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.75; }
+}
+
+.voice-status-pill {
+  font-size: 13px;
+  font-weight: 600;
+  color: #0b3c36;
+  background: #e2f4f0;
+  padding: 6px 16px;
+  border-radius: 14px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+
+/* ===================================================
+   HORIZONTAL ROW CROP CARDS
+=================================================== */
+
+.crop-row-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.crop-row-card {
+  text-decoration: none;
+  background: #ffffff;
+  border: 1px solid #e5f0ec;
+  border-radius: 16px;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.crop-row-card:hover {
+  border-color: #0b3c36;
+  background: #f7fcfa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(11, 60, 54, 0.08);
+}
+
+.crop-row-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.crop-image-wrapper {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: #f0f7f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  box-sizing: border-box;
+  border: 1px solid #dbece6;
+  flex-shrink: 0;
+}
+
+.crop-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.crop-info-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.crop-english-title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.crop-kashmiri-title {
+  font-family: 'Noto Naskh Arabic', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f6e2e;
+  line-height: 1.2;
+}
+
+.crop-row-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.vegetable-pill {
+  background: #eef7f4;
+  color: #0b3c36;
+  border: 1px solid #cce8e0;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+}
+
+.arrow-icon {
+  color: #9cb5ad;
+  font-size: 14px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.crop-row-card:hover .arrow-icon {
+  color: #0b3c36;
+  transform: translateX(4px);
+}
+
+/* Empty Search State */
+.empty-search-state {
+  text-align: center;
+  padding: 40px 16px;
+  color: #55756c;
+}
+
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #0b3c36;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .crop-advisory-main-card {
+    padding: 24px 16px 32px;
+    border-radius: 18px;
   }
 
-  .search-area .search-box,
-  .voice-btn {
-    width: 100%;
+  .banner-title {
+    font-size: 24px;
+  }
+
+  .crop-image-wrapper {
+    width: 48px;
+    height: 48px;
+  }
+
+  .crop-english-title {
+    font-size: 15px;
+  }
+
+  .vegetable-pill {
+    display: none;
   }
 }
