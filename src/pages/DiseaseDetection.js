@@ -32,6 +32,7 @@ function DiseaseDetection() {
   };
 
   const handlePredict = async () => {
+    console.log("API URL:", API_URL);
     if (!image) {
       alert("Please upload a leaf image first.");
       return;
